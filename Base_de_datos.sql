@@ -84,8 +84,9 @@ ALTER TABLE  Lista_reproduccion   ADD CONSTRAINT Lista_reproduccion_fk1  FOREIGN
 DROP TABLE IF EXISTS Administradores CASCADE CONSTRAINTS;
 
  CREATE TABLE Administradores (
-	 Id_administrador  varchar(40) NOT NULL ,
-	 contrasena  varchar(40) NOT NULL ,
+	 Id_administrador  varchar(40) NOT NULL,
+	 contrasena  varchar(40) NOT NULL,
+	 nombre varchar(40) NOT NULL,
 	PRIMARY KEY ( Id_administrador )
 );
 
