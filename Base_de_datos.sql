@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS Estilo CASCADE CONSTRAINTS;
 
 DROP TABLE IF EXISTS Cancion CASCADE CONSTRAINTS;
 CREATE TABLE Cancion (
-	 id_cancion  int(120) NOT NULL  ,
+	 id_cancion varchar(40) NOT NULL  ,
 	 nombre  varchar(40) NOT NULL ,
 	 fecha_alta  DATE NOT NULL,
 	 id_disco  varchar(40) NOT NULL,
