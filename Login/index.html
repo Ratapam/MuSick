@@ -1,25 +1,10 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="css/estilo.css">
-  <script type="text/javascript" src="Js/js.js"></script>
-  <meta charset="UTF-8">
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
-   <!--Made with love by Mutiullah Samim -->
-   
-	<!--Bootsrap 4 CDN-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    <!--Fontawesome CDN-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-	<!--Custom styles-->
+	<title>Login</title>
+	
+	  <meta charset="UTF-8">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
@@ -27,7 +12,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Sign In</h3>
+				<h3>Iniciar sesión</h3>
 				<!--<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
@@ -38,19 +23,19 @@
 				<form>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
+							<span class="input-group-text"><img src="img/user.png" class="iconos"></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text" class="form-control" placeholder="nickname">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<span class="input-group-text"><img src="img/llave.png" class="iconos"/></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" class="form-control" placeholder="contraseña">
 					</div>
 					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
+						<input type="checkbox">Recuérdame
 					</div>
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn">
@@ -59,29 +44,15 @@
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
+					¿Todavía no tienes cuenta?<a href="#" class="enlaces">Regístrate</a>
 				</div>
 				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
+					<a href="#" class="enlaces">¿Has olvidado tu contraseña?</a>
 				</div>
 			</div>
 
 		</div>
 	</div>
-	<div id="pswd_info">
-			    <img src="imagenes/ejemplo.png">
-			    <h4>La contraseña debe cumplir estos requisitos:</h4>
-			    <ul>
-			      <li id="letter" class="invalid">Necesita al menos <strong> una letra</strong>
-			      </li>
-			      <li id="capital" class="invalid">Necesita al menos <strong> una letra mayúscula</strong>
-			      </li>
-			      <li id="number" class="invalid">Necesita al menos <strong> un número</strong>
-			      </li>
-			      <li id="length" class="invalid">Necesita al menos <strong> 8 caracteres</strong>
-			      </li>
-			    </ul>
-			  </div>
 </div>
 </body>
 </html>

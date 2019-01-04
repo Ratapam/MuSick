@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('C:/Users/Rebee/Desktop/DAW/proyectoPhp/bootstrap/Login/img/fondo.jpg');
+background-image: url('C:/Users/Rebee/Desktop/DAW/proyectoPhp/bootstrap/Login/img/fondo2.jpg');
 background-color: lightblue;
 background-size: cover;
 background-repeat: no-repeat;
@@ -17,7 +17,6 @@ align-content: center;
 }
 
 .card{
-height: 370px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
@@ -47,7 +46,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: rgb(144, 229, 200);
+background-color: rgb(234, 226, 153);
 color: black;
 border:0 !important;
 }
@@ -57,9 +56,15 @@ outline: 0 0 0 0  !important;
 box-shadow: 0 0 0 0 !important;
 
 }
+#pswd_info{
+	padding: 15px;
+}
 
 .remember{
-color: white;
+	color: white;
+}
+.remember2{
+	margin-bottom: 5px;
 }
 
 .enlaces{
@@ -84,7 +89,7 @@ margin-right: 5px;
 
 .login_btn{
 color: black;
-background-color: rgb(144, 229, 200);
+background-color: rgb(234, 226, 153);
 width: 100px;
 }
 
