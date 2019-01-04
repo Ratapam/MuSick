@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('C:/Users/Rebee/Desktop/DAW/proyectoPhp/bootstrap/Login/img/fondo2.jpg');
+background-image: url('../img/fondo2.jpg');
 background-color: lightblue;
 background-size: cover;
 background-repeat: no-repeat;
