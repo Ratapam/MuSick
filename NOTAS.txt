@@ -5,4 +5,4 @@ NOTAS:
 	- Cambiar alias por nick;
 	- Cambiar contrasena por password; ???
 	- Poner todos los nombres y campos de las tablas en minúsculas.
-
+	- Introducir el campo email en la tabla usuario.
