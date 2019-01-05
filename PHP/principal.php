@@ -13,7 +13,7 @@ function crearImagen($dato, $numero) {
     <div class="col-sm-12 col-md-6 col-lg-3">
     <a href="#" class="d-block mb-4 h-100">
     <img class="embed-responsive-item" control 
-    src="img/imgPrincipal/'.$dato.'/'.$dato.$numero.'.png"/>
+    src="HTML/img/imgPrincipal/'.$dato.'/'.$dato.$numero.'.png"/>
     </img>
     </a>
     </div>';
