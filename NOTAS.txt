@@ -1,5 +1,6 @@
 NOTAS:
-
+- README:
+	- Poner una guia para facilitar el uso de la aplicacion y una pequeña presentación.
 
 - BASE DE DATOS:
 	- Cambiar alias por nick;
