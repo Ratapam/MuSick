@@ -1,0 +1,42 @@
+header{
+  height: 5em;
+  background-color: #212529;
+}
+header > div
+{
+  text-align: center;
+}
+
+header > div > img {
+  margin: .5em 0;
+  width: 5em;
+  height: 4em;
+}
+
+footer {
+	background-color: #212529;
+	text-align: center;
+	padding: 2em;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	width: 98%;
+}
+
+main > div {
+	margin-top: 15%;
+	text-align: center;
+}
+
+main > div > form > input {
+	text-align: center;
+	line-height: 1.5em;
+	margin-top: 1em;
+	border-radius: 5px;
+}
+
+header > div > a {
+	float: right;
+	padding: .5em;
+	text-decoration: none;
+}

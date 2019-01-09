@@ -1,0 +1,13 @@
+img {
+    max-width: 20px;
+}
+
+body {
+    text-align: center;
+    margin-top: 5%;
+}
+
+footer > div > div {
+    padding: 1em;
+}
+
