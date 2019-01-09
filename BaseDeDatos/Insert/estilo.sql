@@ -1,1 +1,0 @@
-INSERT INTO Estilo (id_estilo,nombre) VALUES('E001','Pop');
