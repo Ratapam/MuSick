@@ -72,6 +72,9 @@ SELECT * FROM Administradores WHERE nombre = $nombre AND contrasena = $contrasen
 
 /* Cancion / Disco / Autor */
 
-SELECT * FROM Cancion, Disco, Autor WHERE id_disco.disco = id_disco.cancion AND id_autor.cancion = id_autor.autor;
+SELECT Cancion.nombre, Disco.nombre , Autor.nombre , Estilo.nombre FROM Cancion, Disco, Autor,Estilo WHERE Disco.id_disco = Cancion.id_disco AND Cancion.id_autor = Autor.id_autor
+AND Estilo.id_estilo = Cancion.id_estilo;
 
+/* --- Nombre Disco / Nombre Cancion / Nombre Estilo --- */
 
+select Disco.nombre as Disco , Cancion.nombre as Cancion ,Estilo.nombre as Estilo from Disco,Cancion,Estilo where id_autor =(select id_autor from Autor where nombre='Manolo Garcia');
