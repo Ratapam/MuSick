@@ -14,7 +14,7 @@ function crearImagen($dato, $numero) {
     echo '
     <div class="col-sm-12 col-md-6 col-lg-3">
     <a href="#artista?name='.$dato.'" class="d-block mb-4 h-100">
-    <img class="embed-responsive-item" control 
+    <img class="embed-responsive-item" control
     src="../img/imgPrincipal/'.$dato.'/'.$dato.$numero.'.png"/>
     </img>
     </a>
@@ -52,23 +52,23 @@ function estructuraHtml($datos) {
     crossorigin="anonymous">
   <link href="../css/principal.css" rel="stylesheet">
 
-  
+
 
 </head>
 
 <body>
-  <header>
+<!--  <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <div class="collapse navbar-collapse" id="navbarResponsive"><a class="navbar-brand" href="#"><img src="../img/logo.png"
               class="logo"></a></div>
         <input type="text" class="buscador" name="" placeholder="Busca aquí...">
-        <!---->
+
 
         <a class="nav-link" href="#"><img class="usu" src="../img/usu.png"></a>
       </div>
     </nav>
-  </header>
+  </header> -->
   <main class="container">
 
 
@@ -80,20 +80,11 @@ function estructuraHtml($datos) {
 
 
 </main>
-  <footer class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+  <!-- <footer class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Musick 2019</p>
     </div>
-  </footer>
+  </footer> -->
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
