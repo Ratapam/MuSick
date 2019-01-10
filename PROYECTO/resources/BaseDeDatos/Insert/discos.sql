@@ -1,3 +1,3 @@
-INSERT INTO Disco (id_disco,nombre) VALUES('D001','Pajaros en la cabeza');
+INSERT INTO Disco (nombre) VALUES('Pajaros en la cabeza');
 
-INSERT INTO Disco (id_disco,nombre) VALUES('D002','Arena En Los bolsillos');
+INSERT INTO Disco (nombre) VALUES('Arena En Los bolsillos');
