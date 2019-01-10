@@ -1,7 +1,6 @@
 <?php
 $busqueda = "";
 
-
 if(isset($_GET['enviar'])){
   $busqueda = $_GET['busqueda'];
 
