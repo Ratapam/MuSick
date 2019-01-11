@@ -53,6 +53,10 @@ function estructuraHtml($datos) {
   <link href="../css/home.css" rel="stylesheet">
 
 
+<<<<<<< HEAD:PROYECTO/public/PHP/home.php
+=======
+
+>>>>>>> 1719bd0206d04fe6a1be2c3138ed3011d95036f3:proyecto_0.1/php/principal.php
 
 </head>
 
@@ -68,7 +72,11 @@ function estructuraHtml($datos) {
         <a class="nav-link" href="#"><img class="usu" src="../img/usu.png"></a>
       </div>
     </nav>
+<<<<<<< HEAD:PROYECTO/public/PHP/home.php
   </header>   -->
+=======
+  </header> -->
+>>>>>>> 1719bd0206d04fe6a1be2c3138ed3011d95036f3:proyecto_0.1/php/principal.php
   <main class="container">
 
 
@@ -80,7 +88,11 @@ function estructuraHtml($datos) {
 
 
 </main>
+<<<<<<< HEAD:PROYECTO/public/PHP/home.php
   <!--<footer class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+=======
+  <!-- <footer class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+>>>>>>> 1719bd0206d04fe6a1be2c3138ed3011d95036f3:proyecto_0.1/php/principal.php
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Musick 2019</p>
     </div>
