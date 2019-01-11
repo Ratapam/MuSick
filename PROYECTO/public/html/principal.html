@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Principal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="../css/principal.css" rel="stylesheet">
+    <style>
+  main iframe{
+  /*margin: 0;
+  padding: 0;*/
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 500px;
+}
+#nav{
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#nav > div > div{
+  margin: 2px;
+  flex: 1 0 auto;
+}
+
+</style>
+  </head>
+  <body>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="nav">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbarResponsive"><a class="navbar-brand" href="perfil.hmtl"><img src="../img/logo.png" class="logo"></a></div>
+        <input type="text" class="buscador" name="" placeholder="Busca aquí...">
+        <a class="nav-link" href="#"><img class="usu" src="../img/usu.png"></a>
+      </div>
+    </nav>
+ </header>
+    <main class="container">
+      <iframe src="../PHP/home.php"></iframe>
+    </main>
+  <footer class="py-4 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Musick 2019</p>
+    </div>
+  </footer>
+  </body>
+
+</html>
