@@ -50,12 +50,27 @@ footer > div > div > img {
     max-width: 20px;
 }
 
+footer > div > div:nth-of-type(3) > div:nth-of-type(1){
+	
+}
+
+footer > div > div:nth-of-type(3) > div:nth-of-type(2){
+
+}
+
+footer > div > div:nth-of-type(3) > div:nth-of-type(2)>img{
+	margin-top: -10px;
+	width: 2.5em;
+	height: 2.em;
+}
+
 footer > div > div {
     padding: 1em;
 }
 
 #reproductor {
-	padding-top: 1em;
+
+	
 }
 
 
