@@ -17,12 +17,12 @@ header {
 	height: 5em;
 }
 
-header > div > div > a > img {
+header > div > div > span > img {
 	width: 5em;
 	margin-top: 1em;
 }
 
-header > div > div:nth-of-type(3) > a > img {
+header > div > div:nth-of-type(3) > span > img {
 	width: 3em;
   margin-top: 1em;
 	border-radius: 10%;

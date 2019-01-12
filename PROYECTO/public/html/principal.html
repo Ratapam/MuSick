@@ -8,11 +8,23 @@
   <title>Principal</title>
   <link href="../css/principal.css" rel="stylesheet">
   <link href="../css/minibootstrap.css" rel="stylesheet">
+ 
   <style>
 </style>
 <script>
+  /* -- Eventos click en perfil buscar y logo -- 
+  let div1 = document.querySelector('header > div > div:nth-of-type(1)');
+
+  let div3 = document.querySelector('header > div > div:nth-of-type(3)');
+
+  div1.document.addEventListener('click',cambiarIframe);
+
+  div3.document.addEventListener('click',cambiarIframe);
+*/
+
+  /* -- Reproductor --- 
     window.onload = function () {
-      var audio = document.getElementById("audio");
+      var audio = do*cument.getElementById("audio");
       audio.volume = document.getElementById("volume").value;
       // Eventos
       document.getElementById("play").onclick = function () { audio.play() }
@@ -27,19 +39,19 @@
       // let nombreCancion = audio.currentSrc.substring(lastIndexOf("/", audio.currentSrc), audio.currentSrc.length);
       // document.getElementById("cancion").innerHTML = nombreCancion;
       // document.getElementById("cancion").innerHTML = audio.currentSrc;
-    }
+    }*/
   </script>
 </head>
 <body>
   <header>
     <div class="row">
-      <div class="col-4"><a href=""><img src="../img/logo.png"></a></div>
+      <div class="col-4"><span><img src="../img/logo.png"></span></div>
       <div class="col-4"><input type="text"  placeholder="Busca aquí..."></div>
-      <div class="col-4"><a href=""><img src="../img/usu.png"></a></div>
+      <div class="col-4"><span><img src="../img/usu.png"></span></div>
   </div>
   </header>
   <main class="container">
-    <iframe src="../PHP/home.php" scrolling="" style="" ></iframe>
+    <iframe id="iframe" src="../PHP/home.php" scrolling="" style="" ></iframe>
   </main>
 <footer>
     <div id="reproductor">
@@ -63,5 +75,5 @@
   </div>
 </footer>
 </body>
-
+ <script src="../js/principal.js"></script>
 </html>
