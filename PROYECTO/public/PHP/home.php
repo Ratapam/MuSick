@@ -13,7 +13,7 @@ $carpetas = [
 function crearImagen($dato, $numero) {
   echo '
   <div class="col-sm-12 col-md-6 col-lg-3">
-  <a href="#artista?name='.$dato.'" class="d-block mb-4 h-100">
+  <a href="artista.php" class="d-block mb-4 h-100">
   <img class="embed-responsive-item" control
   src="../img/imgPrincipal/'.$dato.'/'.$dato.$numero.'.png"/>
   </img>

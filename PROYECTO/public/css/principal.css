@@ -1,7 +1,6 @@
 body {
 	background-color: #343a40;
 	text-align: center;
-
 }
 
 main iframe{
@@ -10,7 +9,6 @@ main iframe{
 	right: 0;
 	width: 100%;
 	height: 80%;
-
 }
 
 header {
@@ -22,9 +20,9 @@ header > div > div > span > img {
 	margin-top: 1em;
 }
 
-header > div > div:nth-of-type(3) > span > img {
+header > div > div:nth-of-type(3) > span > a > img {
 	width: 3em;
-  margin-top: 1em;
+  	margin-top: 1em;
 	border-radius: 10%;
 }
 
@@ -32,6 +30,7 @@ header > div > div:nth-of-type(2) > input {
 	width: 80%;
 	border-radius: 2em;
 	margin-top: 2.5em;
+	text-align: center;
 }
 
 footer {
@@ -46,16 +45,14 @@ footer {
 
 /* REPRODUCTOR */
 
+footer > div > div > button > img {
+    width: 20px;
+}
+
 footer > div > div > img {
-    max-width: 20px;
-}
-
-footer > div > div:nth-of-type(3) > div:nth-of-type(1){
-	
-}
-
-footer > div > div:nth-of-type(3) > div:nth-of-type(2){
-
+	Width: 20px;
+	background-color: white;
+	border-radius: 1em;
 }
 
 footer > div > div:nth-of-type(3) > div:nth-of-type(2)>img{

@@ -3,7 +3,8 @@
      $artistas = [
         1 => "michael_jackson",
         2 => "amaral",
-        3 => "manolo_garcía"];
+        3 => "manolo_garcía"
+    ];
      $discos = [
         1 => [
             1 => "Got to Be There (1972)",
@@ -16,7 +17,7 @@
             8 => "Dangerous (1991)",
             9 => "HIStory: Past, Present and Future, Book I (1995)",
             10 => "Blood on the Dance Floor: HIStory in the Mix (1997)",
-            11 => "Invincible (21)"
+            11 => "Invincible (2001)"
         ]
     ];
      $cancionesDisco = [
@@ -152,9 +153,7 @@
     ];
      $informacionArtista = [
         1 =>
-            "Michael Joseph Jackson​ (Gary, Indiana; 29 de agosto de 1958-Los Ángeles,
-            California; 25 de junio de 29) fue un cantante, compositor, productor discográfico,
-            bailarín, actor y filántropo estadounidense.​ Conocido como el «Rey del Pop»,​
+            " Conocido como el «Rey del Pop»,​
             sus contribuciones y reconocimiento en la historia de la música y el baile,
             así como su publicitada vida personal, lo convirtieron en una figura internacional
             en la cultura popular durante más de cuatro décadas. Es reconocido como la estrella
@@ -163,12 +162,17 @@
     ];
 
     function mostrarDatosArtista(int $id_artista) {
-      global $artistas;
-      global $informacionArtista;
+        global $artistas;
+        global $informacionArtista;
         echo '
-        <div class="fotoArtista">
-        <img src="../img/img_artista/'.$artistas[$id_artista].'.png">
-        <div id="texto">
+        <div id="nombreArtista">
+        '.strtoupper(str_replace("_", " ", $artistas[$id_artista])).'
+        </div>
+        <div id="datosArtista">
+        <div class="col-12 col-md-6">
+        <img src="../img/img_artista/artistas/'.$artistas[$id_artista].'.png">
+        </div>
+        <div class="col-12 col-md-6">
         '.$informacionArtista[$id_artista].'
         </div>
         </div>
@@ -176,22 +180,15 @@
     }
 
     function mostrarDiscos(int $id_artista) {
-      global $discos;
+        global $discos;
         echo '
         <div class="discos">
         ';
         foreach ($discos[$id_artista] as $id_disco => $nombreDisco) {
             echo '
             <table class="col-">
-            <thead>
             <caption>'.$nombreDisco.'
             </caption>
-            <tr>
-            <th>DURACIÓN</th>
-            <th>CANCIONES</th>
-            <th>GUARDAR EN BIBLIOTECA</th>
-            </tr>
-            </thead>
             ';
             mostrarCanciones($id_artista, $id_disco);
             echo '</table>';
@@ -200,16 +197,19 @@
     }
 
     function mostrarCanciones(int $id_artista, int $id_disco) {
-      global $cancionesDisco;
-      $disco = $cancionesDisco[$id_artista][$id_disco];
-      foreach ($disco as $id_cancion => $cancion) {
-          echo '
-          <tr>
-          <td>'.$disco[$id_cancion][1].'</td>
-          <td>'.$disco[$id_cancion][0].'</td>
-          <td><img src="../img/img_artista/mas.png"></td>
-          </tr>
-          ';
+        global $cancionesDisco;
+        $disco = $cancionesDisco[$id_artista][$id_disco];
+        foreach ($disco as $id_cancion => $cancion) {
+            echo '
+            <tr>
+            <td>'.$disco[$id_cancion][1].'</td>
+            <td>'.$disco[$id_cancion][0].'</td>
+            <td>
+            <button type="button">
+            <img src="../img/img_artista/mas.png"></td>
+            </button>
+            </tr>
+            ';
         }
     }
 
