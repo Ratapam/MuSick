@@ -66,6 +66,7 @@ $cancionesDisco = [
 
 function mostrarListas() {
     echo '
+    <h3>Tu lista de reproducción</h3>
     <div class="lista">
     <table>
     <thead id="cabecera">

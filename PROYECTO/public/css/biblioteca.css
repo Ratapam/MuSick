@@ -29,5 +29,10 @@ tr > td:nth-of-type(2) {
     color: darkblue;
 }
 
+h3 {
+    color:silver;
+    font-size: 1.5em;
+    margin:1.5em 0;
+}
 
 

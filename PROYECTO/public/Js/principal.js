@@ -3,12 +3,12 @@
 
   let span1 = document.querySelector('header > div > div:nth-of-type(1) > span');
   let span2 = document.querySelector('header > div > div:nth-of-type(3) > span');
-  let lista = document.getElementById('lista')
+  let biblioteca = document.getElementById('biblioteca')
   //div1.document.addEventListener('click',cambiarIframe1);
 
   span1.addEventListener('click',cambiarIframe1);
   span2.addEventListener('click',cambiarIframe2);
-  lista.addEventListener('click',cambiarIframe3);
+  biblioteca.addEventListener('click',cambiarIframe3);
 
   /* Funciones */
 
@@ -39,7 +39,7 @@
     // const iframe = document.querySelector('main > iframe');
      let iframe = document.getElementById('iframe');
  
-       iframe.src = 'biblio.html';
+       iframe.src = '../PHP/biblioteca.php';
      
    }
 

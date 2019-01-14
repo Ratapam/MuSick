@@ -15,15 +15,17 @@ header {
 	height: 5em;
 }
 
-header > div > div > span > img {
+header > div > div:nth-of-type(1) > span > img {
 	width: 5em;
 	margin-top: 1em;
 }
 
-header > div > div:nth-of-type(3) > span > a > img {
-	width: 3em;
-  	margin-top: 1em;
-	border-radius: 10%;
+header > div > div:nth-of-type(3) > span > img{
+	width: 3.5em;
+	border-radius: 5%;
+	margin-top: 1em;
+	text-align: center;
+	
 }
 
 header > div > div:nth-of-type(2) > input {

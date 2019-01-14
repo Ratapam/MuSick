@@ -126,7 +126,7 @@ function procesarPantalla() {
 		<header class="row">
 			<div class="col-12">
 				<img src="../img/logo.png">
-				<a href="login.html">
+				<a href="../html/login.html">
 					<input type="button" value="Cerrar sesion"/>
 				</a>
 			</div>
