@@ -17,43 +17,43 @@
  /* function cambiarIframe1(){
    // const iframe = document.querySelector('main > iframe');
     const pagina = "../PHP/home.php";
-    document.getElementById('if').src= pagina; 
-    
+    document.getElementById('if').src= pagina;
+
   }*/
 
    function cambiarIframe1(){
 
     let iframe = document.getElementById('iframe');
 
-      iframe.src = '../PHP/home.php';
-    
+      iframe.src = '../php/home.php';
+
   }
 
    function cambiarIframe2(){
- 
+
     let iframe = document.getElementById('iframe');
 
       iframe.src = 'perfil.html';
-    
+
   }
 
   function cambiarIframe3(){
- 
+
      let iframe = document.getElementById('iframe');
- 
-       iframe.src = '../PHP/biblioteca.php';
-     
+
+       iframe.src = '../php/biblioteca.php';
+
    }
 
     function cambiarIframe4(){
-   
+
      let iframe = document.getElementById('iframe');
  
-       iframe.src = '../PHP/artista.php';
+       iframe.src = '../php/artista.php';
 
-       
-    
-     
+
+
+
    }
 
   /* -- Reproductor --- */

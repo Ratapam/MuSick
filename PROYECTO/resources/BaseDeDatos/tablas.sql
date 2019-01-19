@@ -101,7 +101,6 @@ ALTER TABLE  Lista_reproduccion   ADD CONSTRAINT Lista_reproduccion_fk1  FOREIGN
 /* --- Autores --- */
 
 INSERT INTO Autor (nombre) VALUES('Amaral');
-
 INSERT INTO Autor (nombre) VALUES('Manolo Garcia');
 
 
@@ -126,3 +125,7 @@ INSERT INTO Cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Carb
 INSERT INTO Cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Del Bosque De Tu Alegria',CURRENT_DATE,2,2,1);
 INSERT INTO Cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Pajaros De Barro',CURRENT_DATE,2,2,1);
 INSERT INTO Cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Sobre el Oscuro Abismo En Que Te Meces',CURRENT_DATE,2,2,1);
+
+/* --- Usuarios --- */
+INSERT INTO Usuario (id_usuario,contrasena,nombre,nombre,apellidos,edad,alias) VALUES ("1234","Javier","Moyano",31,"Javier");
+INSERT INTO Usuario (id_usuario,contrasena,nombre,nombre,apellidos,edad,alias) VALUES ("1234","Pablo","Alvarez",33,"Pablo");
