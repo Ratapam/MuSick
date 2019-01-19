@@ -1,0 +1,26 @@
+body {
+  padding-top: 54px;
+}
+/*.container{
+	padding: 0;
+  margin: 0;
+}*/
+.img{
+	width: 100%;
+	border: 1px solid #dee2e6;
+	border-radius: .25rem;
+	/*padding: .25rem;
+	height: auto;*/
+}
+@media (min-width: 992px) {
+  body {
+    padding: 56px;
+  }
+.img{
+	width: 100%;
+	border: 1px solid #dee2e6;
+	border-radius: .25rem;
+	/*padding: .25rem;
+	height: auto;*/
+}
+}
