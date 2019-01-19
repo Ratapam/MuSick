@@ -1,6 +1,14 @@
-body {
-	background-color: #343a40;
+html {
+	height: 100%;
+	width: 100%;
+}
+
+
+body { 
+	background-image: linear-gradient(to left top, rgb(59, 0, 0), black);
 	text-align: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 main iframe{
@@ -37,7 +45,6 @@ header > div > div:nth-of-type(2) > input {
 
 footer {
 	margin: 0 0 0 -10px;
-	background-color: #343a40;
 	height: 4.5em;
 	position: absolute;
 	bottom: 0;
