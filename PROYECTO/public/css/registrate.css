@@ -1,107 +1,83 @@
-/* Made with love by Mutiullah Samim*/
-
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('../img/fondo2.jpg');
-background-color: lightblue;
-background-size: cover;
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
+    background-image: url('../img/fondo2.jpg');
+    background-color: lightblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
 }
 
-.container{
-height: 100%;
-align-content: center;
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
 }
 
-.card{
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
+.tarjeta {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    width: 400px;
 }
 
-.social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFAA30;
+.cabecera {
+    color: white;
+    font-size: 1.75rem;
+    padding: 0;
 }
 
-.social_icon span:hover{
-color: white;
-cursor: pointer;
+.cabecera > h3 {
+    margin-top: 0;
+    font-weight: lighter;
 }
 
-.card-header h3{
-color: white;
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.social_icon{
-position: absolute;
-right: 20px;
-top: -45px;
+.grupo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-block-end: .8em;
 }
 
-.input-group-prepend span{
-width: 50px;
-background-color: rgb(234, 226, 153);
-color: black;
-border:0 !important;
+.icono {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: rgb(234, 226, 153);
+    padding: .3em 1em;
+    border: 1px solid black;
+    border-radius: 5px 0 0 5px;
 }
 
-input:focus{
-outline: 0 0 0 0  !important;
-box-shadow: 0 0 0 0 !important;
-
-}
-#pswd_info{
-	padding: 15px;
+.input {
+    border-radius: 0 5px 5px 0;
+    border: 1px solid black;
+    padding-left: 1rem;
+    font-size: 1.1rem;
 }
 
-.remember{
-	color: white;
-}
-.remember2{
-	margin-bottom: 5px;
+.contenedor_boton {
+    align-self: flex-end;
 }
 
-.enlaces{
-	color: rgb(144, 229, 200);
-}
-
-.enlaces:hover{
-	color: rgb(144, 229, 200);
-}
-
-.iconos{
-	max-width: 100%;
-}
-
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
-}
-
-.login_btn{
-color: black;
-background-color: rgb(234, 226, 153);
-width: 100px;
-}
-
-.login_btn:hover{
-color: black;
-background-color: white;
-}
-
-.links{
-color: white;
-}
-
-.links a{
-margin-left: 4px;
+.boton {
+    background-color: rgb(234, 226, 153);
+    border-radius: 5px;
+    padding: .6rem 1.2rem;
+    font-size: 1.1rem;
+    border: 1px solid black;
 }
