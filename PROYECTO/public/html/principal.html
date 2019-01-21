@@ -21,24 +21,6 @@
   div3.document.addEventListener('click',cambiarIframe);
 */
 
-  /* -- Reproductor --- */
-    window.onload = function () {
-      var audio = document.getElementById("audio");
-      audio.volume = document.getElementById("volume").value;
-      // Eventos
-      document.getElementById("play").onclick = function () { audio.play() }
-      document.getElementById("pause").onclick = function () { audio.pause() }
-      document.getElementById("stop").onclick = function () { audio.load() }
-      document.getElementById("volume").onchange = function (e) { audio.volume = e.target.value }
-      audio.ontimeupdate = function () {
-        document.getElementById("time").max = audio.duration;
-        document.getElementById("time").value = audio.currentTime;
-      }
-      // Para poner el nombre de la canción debajo. -- NO FUNCIONA
-      // let nombreCancion = audio.currentSrc.substring(lastIndexOf("/", audio.currentSrc), audio.currentSrc.length);
-      // document.getElementById("cancion").innerHTML = nombreCancion;
-      // document.getElementById("cancion").innerHTML = audio.currentSrc;
-    }
   </script>
 </head>
 <body>
