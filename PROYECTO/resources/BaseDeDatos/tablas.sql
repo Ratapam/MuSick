@@ -1,10 +1,7 @@
 CREATE TABLE IF NOT EXISTS Usuario (
 	id_usuario  INT(10) NOT NULL AUTO_INCREMENT,
 	contrasena  VARCHAR(40) NOT NULL,
-	nombre  VARCHAR(40) NOT NULL,
-	apellidos  VARCHAR(40) NOT NULL,
-	edad  INT(120) NOT NULL,
-	alias  VARCHAR(50) NOT NULL,
+	nick  VARCHAR(50) NOT NULL,
 	correo VARCHAR(250) NOT NULL,
 	PRIMARY KEY (id_usuario, contrasena)
 );
@@ -60,17 +57,19 @@ CREATE TABLE IF NOT EXISTS Lista_reproduccion  (
 );
 
 CREATE TABLE IF NOT EXISTS Administradores  (
-	id_administrador INT(40) NOT NULL AUTO_INCREMENT,
+	id_administrador INT(10) NOT NULL AUTO_INCREMENT,
 	contrasena VARCHAR(40) NOT NULL,
 	nombre VARCHAR(40) NOT NULL,
 	PRIMARY KEY (id_administrador)
 );
 
 CREATE TABLE IF NOT EXISTS Token  (
+	id_token INT(10) NOT NULL AUTO_INCREMENT,
 	token VARCHAR (60) NOT NULL,
-	alias VARCHAR (50) NOT NULL,
-	datos VARCHAR (250) NOT NULL,
-	PRIMARY KEY (token)
+	id_usuario  INT(10) NOT NULL,
+	fecha_expira DATE NOT NULL,
+	PRIMARY KEY (id_token),
+	FOREIGN KEY (id_usuario) REFERENCES Usuario (id_usuario)
 );
 
 /*********************************************************/
@@ -106,11 +105,9 @@ INSERT INTO Cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Paja
 INSERT INTO Cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Sobre el Oscuro Abismo En Que Te Meces',CURRENT_DATE,2,2,1);
 
 /* --- Usuario --- */
-INSERT INTO Usuario (contrasena,nombre,apellidos,edad,alias,correo) VALUES ("1234","Javier","Moyano",31,"Javier","moyano_07@hotmail.com");
-INSERT INTO Usuario (contrasena,nombre,apellidos,edad,alias,correo) VALUES ("1234","Pablo","Alvarez",33,"Pablo","ratapam@gmail.com");
+INSERT INTO Usuario (contrasena,nick,correo) VALUES ("1234","Javier","moyano_07@hotmail.com");
+INSERT INTO Usuario (contrasena,nick,correo) VALUES ("1234","Pablo","ratapam@gmail.com");
 
 /* --- Token --- */
-INSERT INTO Token (token, alias, datos) VALUES("1234567890987654321a", "Manolo", "ABCDEFG1");
-INSERT INTO Token (token, alias, datos) VALUES("1234567890987654321b", "Manola", "ABCDEFG2");
-INSERT INTO Token (token, alias, datos) VALUES("1234567890987654321c", "Pepe", "ABCDEFG3");
-INSERT INTO Token (token, alias, datos) VALUES("1234567890987654321d", "Pepa", "ABCDEFG4");
+INSERT INTO Token (token, id_usuario, fecha_expira) VALUES("1234567890987654321a", 1, SYSDATE() + 1);
+INSERT INTO Token (token, id_usuario, fecha_expira) VALUES("1234567890987654321b", 2, SYSDATE() + 1);

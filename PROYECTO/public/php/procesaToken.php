@@ -1,11 +1,26 @@
 <?php
-if (isset($_POST['alias'])) {
+
+function generateToken($length = 30)
+{
+    return bin2hex(random_bytes($length));
+}
+
+
+
+
+
+if (isset($_POST)) {
+    $token = generateToken();
     echo '
-    <form action="get">
-        <input type="button" name="tokken" value="'.$tokken.'">
+    <form action="../html/principal.html" method="GET">
+        <input type="submit" name="tokken" value="'.$token.'">
     </form>
     ';
+
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,8 +31,6 @@ if (isset($_POST['alias'])) {
     <title>Tokken</title>
 </head>
 <body>
-<form action="get">
-        <input type="button" name="tokken" value="'.$tokken.'">
-    </form>
+
 </body>
 </html>
