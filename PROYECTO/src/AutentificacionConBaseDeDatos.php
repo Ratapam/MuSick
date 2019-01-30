@@ -49,13 +49,15 @@ class AutentificacionConBaseDeDatos
 
     }
 
-    public function existeUsuario(string $user, string $pass): bool
+    public function existeUsuario(string $user, string $pass)
     {
         try {
             $sentenciaSQL = $this->dbPDO->query("SELECT * FROM Usuario WHERE nick = '$user' AND contrasena = '$pass'");
             $resultado = $sentenciaSQL->fetchAll();
-            print_r($resultado);
-            return (count($resultado) == true);
+            
+            if(count($resultado) == true){
+                return $resultado[0]['id_usuario'];
+            }
         } catch (PDOException $e) {
             print "¡Error!: " . $e->getMessage() . "<br/>";
             return false;
