@@ -2,6 +2,7 @@
 //NO funciona el requiere
 //require_once('../config/bd_config.php');
 
+
 $db_user = 'administrador';
 $db_pass = '1234';
 $db_name = 'musick';
@@ -25,6 +26,27 @@ class AutentificacionConBaseDeDatos
             print "¡Error!: ".$e->getMessage()."<br/>";
             die();
         }
+    }
+
+    //Funcion que compara el token y el id de la cookie recuerdame con la base datos
+
+
+    public function compruebaCookieRecuerdame($id,$token){
+        try {
+            $sentenciaSQL = $this->dbPDO->query("SELECT id_usuario,token FROM token WHERE id_usuario = '$id' AND token = '$token
+            AND tipoToken='tokenRecuerdame''");
+            $resultado = $sentenciaSQL->fetchAll();
+            print_r($resultado);
+            if(count($resultado) == true){
+                return $resultado[0]['id_usuario'];
+            }else{
+                return false;
+            }
+        } catch (PDOException $e) {
+            print "¡Error!: " . $e->getMessage() . "<br/>";
+            return false;
+        }
+
     }
 
     public function existeUsuario(string $user, string $pass): bool

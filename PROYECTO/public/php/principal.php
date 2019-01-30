@@ -1,4 +1,9 @@
 <?php
+if(isset($_SESSION['logeado'])){
+  $_SESSION['logeado'] == true;
+}else{
+  header('refresh:2,../html/login.php');
+}
 
 // Arrays Base de Datos
 

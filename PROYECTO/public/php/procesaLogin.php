@@ -19,16 +19,17 @@ $mdb = new AutentificacionConBaseDeDatos();
 if ($mdb->existeUsuario($alias, $contrasena)){
   	//Si introduce bien su alias y su contrasena, creamos una sesion
   	// y le redirigemos a la pagina principal.
-    session_name("ALIAS");
+    session_name("id");
     session_start();
-    if(!isset($_SESSION['alias'])){
-      $_SESSION['alias'] = $alias;
+    if(!isset($_SESSION['id'])){
+      $_SESSION['id'] = $id;
+      $_SESSION['logeado'] = true;
     }
     session_write_close();
-    header('Location: ../html/principal.html?redirigido=1');
+    header('Location: principal.php?redirigido=1');
     exit;
 } else {
-    header('Location: ../html/login.html?redirigido=0');
+    header('Location: ../html/login.php?redirigido=0');
 }
 
 ?>
