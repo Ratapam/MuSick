@@ -42,7 +42,7 @@ if(isset($_SESSION['logeado'])){
 						<input type="password" name="contrasena" class="form-control" placeholder="contraseña" required>
 					</div>
 					<div class="row align-items-center remember">
-						<input type="checkbox">Recuérdame
+						<input type="checkbox" name='recuerdame'>Recuérdame
 					</div>
 					<div class="form-group">
 						<input type="submit" name="enviar" value="Login" class="btn float-right login_btn">
