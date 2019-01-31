@@ -1,3 +1,11 @@
+<?php
+session_status();
+if(isset($_SESSION['logeado'])){
+	if($_SESSION['logeado'] == true){
+		header('location:principal.html');
+	}
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +42,7 @@
 						<input type="password" name="contrasena" class="form-control" placeholder="contraseña" required>
 					</div>
 					<div class="row align-items-center remember">
-						<input type="checkbox">Recuérdame
+						<input type="checkbox" name='recuerdame'>Recuérdame
 					</div>
 					<div class="form-group">
 						<input type="submit" name="enviar" value="Login" class="btn float-right login_btn">

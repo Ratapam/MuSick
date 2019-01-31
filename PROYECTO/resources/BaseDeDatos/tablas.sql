@@ -64,13 +64,15 @@ CREATE TABLE IF NOT EXISTS Administradores  (
 );
 
 CREATE TABLE IF NOT EXISTS Token  (
-	id_token INT(10) NOT NULL AUTO_INCREMENT,
-	token VARCHAR (60) NOT NULL,
 	id_usuario  INT(10) NOT NULL,
+	tipoToken VARCHAR (50) NOT NULL,
+	token VARCHAR (60) NOT NULL,
 	fecha_expira DATE NOT NULL,
-	PRIMARY KEY (id_token),
-	FOREIGN KEY (id_usuario) REFERENCES Usuario (id_usuario)
+	PRIMARY KEY (id_usuario)
+	
 );
+
+
 
 /*********************************************************/
 

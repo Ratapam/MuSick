@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(isset($_SESSION['logeado'])){
+  $_SESSION['logeado'] == true;
+}else{
+  header('refresh:2,../html/login.php');
+  die();
+}
 
 // Arrays Base de Datos
 
