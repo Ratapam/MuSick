@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS Token  (
 	token VARCHAR (60) NOT NULL,
 	fecha_expira DATE NOT NULL,
 	PRIMARY KEY (id_usuario)
-	
+
 );
 
 

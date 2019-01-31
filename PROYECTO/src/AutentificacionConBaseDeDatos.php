@@ -34,9 +34,11 @@ class AutentificacionConBaseDeDatos
     public function existeUsuario(string $user, string $pass)
     {
         try {
-            $sentenciaSQL = $this->dbPDO->query("SELECT * FROM Usuario WHERE nick = '$user' AND contrasena = '$pass'");
+            ;
+            $sentenciaSQL = $this->dbPDO->query("SELECT * FROM Usuario WHERE
+            nick = '$user' AND contrasena = '$pass'");
             $resultado = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
-            
+
             if(count($resultado) == true){
                 return $resultado[0]['id_usuario'];
             }
@@ -47,14 +49,14 @@ class AutentificacionConBaseDeDatos
     }
 
 
-    // Funcionn que inserta un token de tipo recuerdame cuando el usuario se logea y pulsa el check 
+    // Funcionn que inserta un token de tipo recuerdame cuando el usuario se logea y pulsa el check
     // de recuerdame.
     // la fecha se introduce con now() , debemos implemetar un script que borre los campos
     // de las cookie con tipo recuerdame con el la fecha que creamos conveniene o en este caso
     // al ser las cookie de recuerdame podrian quedarse hasta que el usuario pulse cerrar sesion.
 
     public function insertToken( $id_usuario,  $tipo,  $token) {
-     
+
         try {
             $sentencia = $this -> dbPDO -> prepare("INSERT INTO Token (id_usuario, tipoToken,
              token,fecha_expira) VALUES (:id_usuario, :tipoToken, :token,now());");
@@ -76,14 +78,18 @@ class AutentificacionConBaseDeDatos
 
     public function compruebaCookieRecuerdame($id,$token){
         try {
-            $sentenciaSQL = $this->dbPDO->query("SELECT * FROM token 
-            WHERE id_usuario = $id
-              AND tipoToken='recuerdame'");
-            $sentenciaSQL -> execute();
+            $sentenciaSQL = $this-> dbPDO -> query("SELECT * FROM Token
+            WHERE id_usuario = '$id'
+            AND tipoToken='recuerdame'");
+            //$sentenciaSQL -> prepare(':id_usuario', $id);
+
+            //$sentencia -> execute();
+            //$sentenciaSQL -> execute();
+
             $resultado = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
-            print_r($resultado);
+
             if(count($resultado)>0 && strcmp($token, $resultado[0]['token'] == 0)){
-                
+
                 return true;
             }else{
                 return false;
