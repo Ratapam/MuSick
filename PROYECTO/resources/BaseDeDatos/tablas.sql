@@ -63,13 +63,22 @@ CREATE TABLE IF NOT EXISTS Administradores  (
 	PRIMARY KEY (id_administrador)
 );
 
+CREATE TABLE UsuariosNC (
+  id_usuarioNC INTEGER(10) AUTO_INCREMENT,
+  nombreNC VARCHAR(30) NOT NULL,
+  contrasenaNC VARCHAR(100) NOT NULL,
+  emailNC VARCHAR(40) NOT NULL,
+  token VARCHAR(100) NOT NULL,
+  UNIQUE(emailNC),
+  PRIMARY KEY (id_usuarioNC)
+);
+
 CREATE TABLE IF NOT EXISTS Token  (
 	id_usuario  INT(10) NOT NULL,
 	tipoToken VARCHAR (50) NOT NULL,
 	token VARCHAR (60) NOT NULL,
 	fecha_expira DATE NOT NULL,
 	PRIMARY KEY (id_usuario)
-
 );
 
 

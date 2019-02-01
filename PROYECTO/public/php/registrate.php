@@ -26,14 +26,19 @@ function procesaRegistrate() {
 				$correo = $_POST["correo"];
 				if (isset($_POST["correo2"])) {
 					if ($_POST["correo"] == $_POST["correo2"]) {
+						require_once("../../resources/generateToken.php");
 						$correo2 = $_POST["correo2"];
+						$mbd -> guardarUsuarioNC($nick, $contrasena, $email, generateToken());
+						header('Location: ');
+						die();
 					}
 				}
 			}
         }
-	}
+	} 
 	mostrarHtml($nick, $correo, $correo2);
 
+	
 }
 // Muestra la pagina html
 function mostrarHtml(string $nick, string $correo, string $correo2) {
