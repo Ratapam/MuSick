@@ -4,7 +4,7 @@ html {
 }
 
 
-body { 
+body {
 	background-image: linear-gradient(to left top, rgb(59, 0, 0), black);
 	text-align: center;
 	background-size: 100%;
@@ -33,7 +33,7 @@ header > div > div:nth-of-type(3) > span > img{
 	border-radius: 5%;
 	margin-top: 1em;
 	text-align: center;
-	
+
 }
 
 header > div > div:nth-of-type(2) > input {
@@ -51,6 +51,11 @@ footer {
 	width: 100%;
 }
 
+img {
+	cursor: pointer;
+}
+
+
 
 /* REPRODUCTOR */
 
@@ -65,7 +70,7 @@ footer > div > div > img {
 }
 
 footer > div > div:nth-of-type(3) > div:nth-of-type(2)>img{
-	margin-top: -10px;
+	margin-top: ;
 	width: 2.5em;
 	height: 2.em;
 }
@@ -74,10 +79,7 @@ footer > div > div {
     padding: 1em;
 }
 
-#reproductor {
 
-	
-}
 
 
 
