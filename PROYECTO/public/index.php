@@ -11,9 +11,10 @@ if(isset($_COOKIE['recuerdame']) || isset($_SESSION['logeado'])){
             $token = $arrRecuerdame['token'];
             $db = new AutentificacionConBaseDeDatos();
             $resultado = $db -> compruebaCookieRecuerdame($id_usuario,$token);
-            
+
             if($resultado){
-              
+              //Si la cookie es buena , aprovechamos el id_usuario que contenia
+              // para  introducirlo en la sesion
                 $_SESSION['id'] = $id_usuario;
                 $_SESSION['logeado'] = true;
               
