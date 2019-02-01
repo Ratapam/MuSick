@@ -102,13 +102,12 @@ class AutentificacionConBaseDeDatos
 
 ///////////////////////////////////////////////////////////
     // Función que guarda el UsuarioNC en la base de datos
-    public function guardarUsuarioNC(string $nombreNC, string $contrasenaNC, string $emailNC, string $token) {
+    public function guardarUsuarioNC(string $nombreNC, string $contrasenaNC, string $emailNC) {
         try {
-            $sentencia = $this -> conexion -> prepare("INSERT INTO UsuariosNC (nombreNC, contrasenaNC, emailNC, token) VALUES (:nombreNC, :contrasenaNC, :emailNC, :token)");
+            $sentencia = $this -> dbPDO -> prepare("INSERT INTO UsuariosNC (nombreNC, contrasenaNC, emailNC) VALUES (:nombreNC, :contrasenaNC, :emailNC)");
             $sentencia -> bindParam(':nombreNC', $nombreNC);
             $sentencia -> bindParam(':contrasenaNC', $contrasenaNC);
             $sentencia -> bindParam(':emailNC', $emailNC);
-            $sentencia -> bindParam(':token', $token);
             $sentencia -> execute();
             $usuarioBD = null;
         } catch (PDOException $error) {
@@ -148,10 +147,10 @@ class AutentificacionConBaseDeDatos
     // Falta probar -- Función que devuelve los datos de un UsuarioNC
     public function obtenerUsuarioNC(string $id_usuarioNC) {
         try {
-            $sentenciaSQL = $this -> conexion -> query("SELECT * FROM UsuarioNC WHERE id_usuarioNC = '$id_usuarioNC'");
+            $sentenciaSQL = $this -> dbPDO -> query("SELECT * FROM UsuarioNC WHERE id_usuarioNC = '$id_usuarioNC'");
             $usuarioNC = $sentenciaSQL -> fetchAll();
             return $usuarioNC;
-            // $this -> conexion -> guardarUsuario($usuarioNC[0]['nombreNC'], $usuarioNC[0]['contrasenaNC'], $usuarioNC[0]['emailNC']);
+            // $this -> dbPDO -> guardarUsuario($usuarioNC[0]['nombreNC'], $usuarioNC[0]['contrasenaNC'], $usuarioNC[0]['emailNC']);
         } catch (PDOException $error) {
             print "¡Error!: ".$error -> getMessage()."<br/>";
             return false;
@@ -162,7 +161,7 @@ class AutentificacionConBaseDeDatos
     // Falta probar -- Función que borra un token de la tabla Token
     public function borrarToken(int $id_usuario) {
         try {
-            $sentencia = $this -> conexion -> prepare("DELETE FROM Token WHERE id_usuario = $id_usuario");
+            $sentencia = $this -> dbPDO -> prepare("DELETE FROM Token WHERE id_usuario = $id_usuario");
             $sentencia -> execute();
             $usuarioBD = null;
         } catch (PDOException $error) {
@@ -174,12 +173,27 @@ class AutentificacionConBaseDeDatos
     // Falta probar -- Función que borra un usuario de la tabla UsuariosNC
     public function borrarUsuarioNC(int $id_usuario) {
         try {
-            $sentencia = $this -> conexion -> prepare("DELETE FROM UsuariosNC WHERE id_usuarioNC = $id_usuario");
+            $sentencia = $this -> dbPDO -> prepare("DELETE FROM UsuariosNC WHERE id_usuarioNC = $id_usuario");
             $sentencia -> execute();
             $usuarioBD = null;
         } catch (PDOException $error) {
             echo "</br>¡Error!: ".$error -> getMessage()."</br>";
             die();
+        }
+    }
+
+    // Falta probar -- Función que devuelve el id_usuarioNC
+    public function saberIdusuarioNC(string $email): int {
+        try {
+            $sentenciaSQL = $this -> dbPDO -> query("SELECT id_usuarioNC FROM UsuariosNC WHERE emailNC = '$email'");
+            $id_usuarioNC = $sentenciaSQL -> fetchAll();
+            // print_r($id_usuarioNC);
+            $id_usu = $id_usuarioNC[0]['id_usuarioNC'];
+            //echo $id_usu;
+            return $id_usu;
+        } catch (PDOException $error) {
+            print "¡Error!: ".$error -> getMessage()."<br/>";
+            return false;
         }
     }
 

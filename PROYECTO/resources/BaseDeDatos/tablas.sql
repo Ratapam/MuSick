@@ -68,7 +68,6 @@ CREATE TABLE UsuariosNC (
   nombreNC VARCHAR(30) NOT NULL,
   contrasenaNC VARCHAR(100) NOT NULL,
   emailNC VARCHAR(40) NOT NULL,
-  token VARCHAR(100) NOT NULL,
   UNIQUE(emailNC),
   PRIMARY KEY (id_usuarioNC)
 );

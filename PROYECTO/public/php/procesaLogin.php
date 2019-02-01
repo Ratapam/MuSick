@@ -60,7 +60,7 @@ if ($id_usuario != false){
     }
           
   } else {
-    header('Location: ../html/login.php?redirigido=0');
+    header('Location: ../php/login.php?redirigido=0');
     die();
 }
 

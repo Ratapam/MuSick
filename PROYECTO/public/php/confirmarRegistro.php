@@ -1,37 +1,3 @@
-<?php
-session_start();
-require_once('../../src/AutentificacionConBaseDeDatos.php');
-
-$errores=[];
-if(isset($_GET[]))
-
-
-if(isset($_POST['enviar'])){
-  $email = $_POST['email'];
-  $pass = $_POST['pass'];
-  $token = $_POST['token'];
-  $db = new Autentificacion();
-  $comprobacion = $db -> comprobarConfirmacion($email,$pass,$token);
-
-   if($comprobacion){
-     $_SESSION["logeado"] = "si";
-     session_write_close();
-     //print_r($comprobacion);
-     //echo "estoy en el if";
-   /* $nombre = $comprobacion[0]['nombreNC'];
-     $email =  $comprobacion[0]['emailNC'];
-     $pass = $comprobacion[0]['contrasenaNC'];*/
-     //$db -> registrarUsu($email,$nombre,$pass);
-     header('location:../public/home.php');
-     die();
-   }else{
-     $errores[] = $comprobacion;
-   }
-}
-
-
- ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -39,13 +5,26 @@ if(isset($_POST['enviar'])){
     <title></title>
   </head>
   <body>
-    <h3>Por favor, pulsa en aceptar para confirmar tu cuenta de usuario en <br> "Musick"</h3>
-
-    <form class="" action="confirmarRegistro.php" method="post">
-    
-      <input type="hidden" name="token" value="<?=$_GET['tokenConfirmacion']?>">
-      <input type="submit" name="enviar" value="Enviar">
-      
-    </form>
+    <h3>Por favor, pulsa para confirmar tu cuenta de usuario en <strong> "Musick" </strong></h3>
+    <h3>
+        <form action="../index.php" method="get">
+            <input type="hidden" name="id_usuarioNC" value="<?php 
+                    if (isset($_GET['id_usuarioNC'])) {
+                        echo $_GET['id_usuarioNC']; 
+                    } else {
+                        header('Location: login.php');
+                        die();
+                    }    
+                ?>">
+            <input type="submit" name="token" value="<?php 
+                    if (isset($_GET['token'])) {
+                        echo $_GET['token'];
+                    } else {
+                        header('Location: login.php');
+                        die();
+                    } 
+                ?>">
+        </form>    
+    </h3>
   </body>
 </html>

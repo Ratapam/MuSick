@@ -26,11 +26,20 @@ function procesaRegistrate() {
 				$correo = $_POST["correo"];
 				if (isset($_POST["correo2"])) {
 					if ($_POST["correo"] == $_POST["correo2"]) {
-						require_once("../../resources/generateToken.php");
-						$correo2 = $_POST["correo2"];
-						$mbd -> guardarUsuarioNC($nick, $contrasena, $email, generateToken());
-						header('Location: ');
-						die();
+						if (isset($_POST['contrasena']) && isset($_POST['repetir_contrasena'])) {
+							if ($_POST['contrasena'] === $_POST['contrasena']) {
+								require_once("../../resources/generarToken.php");
+								$token = generateToken();
+								$contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
+								$correo2 = $_POST["correo2"];
+								$mdb -> guardarUsuarioNC($nick, $contrasena, $correo);
+								$id_usuarioNC = $mdb -> saberIdusuarioNC($correo);
+								$mdb -> insertToken($id_usuarioNC, "nuevoUsuario", $token);
+								header('Location: ../index.php');
+								die();		
+							
+							}
+						}
 					}
 				}
 			}
@@ -77,11 +86,11 @@ function mostrarHtml(string $nick, string $correo, string $correo2) {
 					</div>
 					<div class="grupo">
                         <img src="../img/llave.png" class="icono">
-						<input type="password" class="input" placeholder="contraseña" required" '.$autofocus4.'>
+						<input type="password" class="input" placeholder="contraseña" name="contrasena" required" '.$autofocus4.'>
 					</div>
 					<div class="grupo">
                         <img src="../img/llave.png" class="icono">
-						<input type="password" class="input" placeholder="repetir contraseña" required">
+						<input type="password" class="input" placeholder="repetir contraseña" name="repetir_contrasena" required">
 					</div>
 					<div class="grupo contenedor_boton">
 						<input type="submit" value="Registro" class="boton">
