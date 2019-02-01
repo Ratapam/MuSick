@@ -113,7 +113,7 @@ function mostrarHtml(string $nick, string $correo, string $correo2) {
 		    <li id="number" class="invalid">Necesita al menos <strong> un número</strong></li>
 		    <li id="length" class="invalid">Necesita al menos <strong> 8 caracteres</strong></li>
 	    </ul>
-	</div> -->
-</div>
+	</div> 
+</div>-->
 </body>
 </html>
