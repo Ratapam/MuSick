@@ -1,5 +1,13 @@
 <?php
 session_start(); 
+if(isset($_SESSION['logeado'])){
+  if($_SESSION['logeado'] == true){
+    header('location: ../html/principal.php');
+  }else {
+  header('Location: ../php/login.php?redirigido=0');
+  die();
+  }
+}
 require_once('../../src/AutentificacionConBaseDeDatos.php');
 require_once('../../resources/generarToken.php');
 //trata loss datos introducidos en el formulario

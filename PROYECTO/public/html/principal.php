@@ -48,7 +48,7 @@ if(isset($_SESSION['logeado'])){
   <main class="container">
     <iframe id="iframe" src="../php/home.php"></iframe>
   </main>
-<footer class="col-12 col-sm-12 col-lg-3">
+<footer class="col-3 col-sm-12 col-lg-12">
     <!--<div id="reproductor">
      <div class="col-12 col-sm-12 col-lg-3">
         <button type="button" id="biblioteca">

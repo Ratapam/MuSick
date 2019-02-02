@@ -1,8 +1,8 @@
 <?php
-session_status();
+session_start();
 if(isset($_SESSION['logeado'])){
 	if($_SESSION['logeado'] == true){
-		header('location: ../html/principal.html');
+		header('location: ../html/principal.php');
 	}
 }
 ?>
