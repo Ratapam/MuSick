@@ -33,7 +33,7 @@ class AutentificacionConBaseDeDatos
     //  - Si no existe en la base de datos devuelve false.
     public function existeUsuario(string $user, string $pass) {
         try {
-            ;
+            
             $sentenciaSQL = $this->dbPDO->query("SELECT * FROM Usuario WHERE
             nick = '$user' AND contrasena = '$pass'");
             $resultado = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
@@ -135,9 +135,13 @@ class AutentificacionConBaseDeDatos
     public function nickDisponible(string $nick) {
         try {
             $sentenciaSQL = $this -> dbPDO -> query("SELECT * FROM Usuario WHERE nick = '$nick'");
-            $resultado = $sentenciaSQL -> fetchAll();
-            print_r($resultado);
-            return (count($resultado) == true);
+            $resultado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
+            if(count($resultado)== 0){
+                return true;
+            }else{
+                return false;
+            }
+            //return (count($resultado) == true);
         } catch (PDOException $error) {
             print "¡Error!: ". $error -> getMessage() ."<br/>";
             return false;
