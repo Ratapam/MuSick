@@ -48,9 +48,9 @@ if(isset($_SESSION['logeado'])){
   <main class="container">
     <iframe id="iframe" src="../php/home.php"></iframe>
   </main>
-<footer>
-    <div id="reproductor">
-      <div class="col-12 col-sm-12 col-lg-3">
+<footer class="col-12 col-sm-12 col-lg-3">
+    <!--<div id="reproductor">
+     <div class="col-12 col-sm-12 col-lg-3">
         <button type="button" id="biblioteca">
           <a href="biblioteca.html"></a>
           <img src="../img/imgReproductor/library.png">
@@ -71,8 +71,16 @@ if(isset($_SESSION['logeado'])){
       <source src="../musica/cancion1.mp3" type="audio/mpeg" />
       Tu navegador no es compatible.
     </audio>
-  </div>
-</footer>
+  </div> -->
+        <button type="button" id="biblioteca">
+          <a href="biblioteca.html">
+            <img src="../img/imgReproductor/library.png">
+          </a>
+        </button>
+        <audio controls >
+          <source src="../musica/cancion1.mp3" type="audio/ogg">
+        </audio> 
+  </footer>
 </body>
  <script src="../js/principal.js"></script>
 </html>
