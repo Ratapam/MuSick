@@ -1,36 +1,26 @@
 <?php
 
-function generateToken($length = 30)
-{
-    return bin2hex(random_bytes($length));
+require_once("../../src/AutentificacionConBaseDeDatos.php");
+
+echo '<pre>';
+print_r($_GET);
+echo '</pre>';
+
+$conexion = new AutentificacionConBaseDeDatos();
+if (isset($_GET['token']) && isset($_GET['id_usuarioNC'])) {
+    echo "uno";
+    if ($conexion -> comprobarToken($_GET['token'], $_GET['id_usuarioNC'])) {
+        echo "dos";
+        $usuarioNC = $conexion -> obtenerUsuarioNC($_GET['id_usuarioNC']);
+        $conexion -> borrarToken($_GET['id_usuarioNC']);
+        $conexion -> borrarUsuarioNC($_GET['id_usuarioNC']);
+        $conexion -> guardarUsuario($usuarioNC[0]['contrasenaNC'], $usuarioNC[0]['nombreNC'], $usuarioNC[0]['emailNC']);
+        $_SESSION['nombre'] = $usuarioNC[0]['nombreNC'];
+        header('Location: login.php');
+        die();
+    }
+} else {
+    echo "El token no es válido.";
 }
-
-
-
-
-
-if (isset($_POST)) {
-    $token = generateToken();
-    echo '
-    <form action="../html/principal.html" method="GET">
-        <input type="submit" name="tokken" value="'.$token.'">
-    </form>
-    ';
-
-}
-
-
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tokken</title>
-</head>
-<body>
-
-</body>
-</html>

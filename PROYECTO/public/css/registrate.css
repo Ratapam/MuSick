@@ -81,3 +81,11 @@ html,body{
     font-size: 1.1rem;
     border: 1px solid black;
 }
+
+.errores { 
+    color: red; 
+    background-color: rgb(234, 226, 153);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: .5rem;
+}

@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS Usuario (
 	id_usuario  INT(10) NOT NULL AUTO_INCREMENT,
-	contrasena  VARCHAR(40) NOT NULL,
+	contrasena  VARCHAR(100) NOT NULL,
 	nick  VARCHAR(50) NOT NULL,
-	correo VARCHAR(250) NOT NULL,
+	correo VARCHAR(50) NOT NULL,
 	PRIMARY KEY (id_usuario, contrasena)
 );
 
@@ -65,9 +65,9 @@ CREATE TABLE IF NOT EXISTS Administradores  (
 
 CREATE TABLE UsuariosNC (
   id_usuarioNC INTEGER(10) AUTO_INCREMENT,
-  nombreNC VARCHAR(30) NOT NULL,
+  nombreNC VARCHAR(50) NOT NULL,
   contrasenaNC VARCHAR(100) NOT NULL,
-  emailNC VARCHAR(40) NOT NULL,
+  emailNC VARCHAR(50) NOT NULL,
   UNIQUE(emailNC),
   PRIMARY KEY (id_usuarioNC)
 );
@@ -117,7 +117,3 @@ INSERT INTO Cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Sobr
 /* --- Usuario --- */
 INSERT INTO Usuario (contrasena,nick,correo) VALUES ("1234","Javier","moyano_07@hotmail.com");
 INSERT INTO Usuario (contrasena,nick,correo) VALUES ("1234","Pablo","ratapam@gmail.com");
-
-/* --- Token --- */
-INSERT INTO Token (token, id_usuario, fecha_expira) VALUES("1234567890987654321a", 1, SYSDATE() + 1);
-INSERT INTO Token (token, id_usuario, fecha_expira) VALUES("1234567890987654321b", 2, SYSDATE() + 1);

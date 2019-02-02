@@ -1,8 +1,7 @@
 <?php
 require_once("../../src/AutentificacionConBaseDeDatos.php");
 
-
-
+procesaRegistrate();
 
 // Comprueba se el correo tiene '@' y '.'
 function correoValido($correo) {
@@ -20,37 +19,29 @@ function procesaRegistrate() {
 	$mdb = new AutentificacionConBaseDeDatos();
 	// Se guardan los datos válidos para mostrarlos dentro del formulario si ya 
 	// se han escrito antes y había alguno que no era válido.
-    if (isset($_POST['enviar'])) {
-		
+    if (isset($_POST['enviar'])) {		
         if ($mdb -> nickDisponible($_POST["nick"])) {
-			$nick = $_POST["nick"];
-		
-        }else{
-			$errores[]="El nick elegido no esta disponible";
-			
-		}
-		
+			$nick = $_POST["nick"];		
+        } else {
+			$errores[]="Nick no disponible";			
+		}		
         if (correoValido($_POST["correo"])) {
-			$correo = $_POST["correo"];
-			
+			$correo = $_POST["correo"];			
 			//Else de comprobacion de correo disponible
-		}else{
-			$errores[] = "Esa direccion de correo no es valida";		
-		}
-		
+		} else {
+			$errores[] = "El correo no es válido";		
+		}		
 		if ($_POST["correo"] != $_POST["correo2"]) {
 		
-			$errores[] = "Los correos introducidos no coinciden";
+			$errores[] = "Los correos no coinciden";
 		}
 		//Aqui coprobamos que las contraseñas coinciden por que no funcionan bien los required
 		if (isset($_POST['contrasena']) && isset($_POST['repetir_contrasena'])) {
-			if ($_POST['contrasena'] != $_POST['repetir_contrasena']) {
-						
+			if ($_POST['contrasena'] != $_POST['repetir_contrasena']) {						
 				$errores[] = "Las contraseñas no coinciden";
-			}		
+			}
 		}
-
-		if(count($errores)== 0){
+		if (count($errores)== 0) {
 			require_once("../../resources/generarToken.php");
 			$token = generateToken();
 			$contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
@@ -58,19 +49,18 @@ function procesaRegistrate() {
 			$mdb -> guardarUsuarioNC($nick, $contrasena, $correo);
 			$id_usuarioNC = $mdb -> saberIdusuarioNC($correo);
 			$mdb -> insertToken($id_usuarioNC, "nuevoUsuario", $token);
-			header('Location: ../index.php');
+			header('Location: confirmarToken.php?id_usuarioNC='.$id_usuarioNC.'&token='.$token.'');
 			die();
-		}else{
-			mostrarHtml($nick, $correo, $correo2,$errores);
-		}
-        
-	} 
-	if(!isset($_POST['enviar'])){mostrarHtml($nick, $correo, $correo2,$errores);
-	}
-	
+		} else {
+			mostrarHtml($nick, $correo, $correo2, $errores);
+		}        
+	} else {
+		mostrarHtml($nick, $correo, $correo2, $errores);
+	}	
 }
+
 // Muestra la pagina html
-function mostrarHtml(string $nick, string $correo, string $correo2,$errores) {
+function mostrarHtml(string $nick, string $correo, string $correo2, $errores) {
 	$autofocus1 = "autocus";
 	$autofocus2 = "";
 	$autofocus3 = "";
@@ -92,7 +82,6 @@ function mostrarHtml(string $nick, string $correo, string $correo2,$errores) {
 	<meta charset="UTF-8">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/registrate.css">
-	<style>.errores{color:red;}</style>
 	<title>Registrate</title>
 	</head>
 	<body>
@@ -122,13 +111,13 @@ function mostrarHtml(string $nick, string $correo, string $correo2,$errores) {
                         <img src="../img/llave.png" class="icono">
 						<input type="password" class="input" placeholder="repetir contraseña" name="repetir_contrasena" required>
 					</div>
-					<div class="grupo errores">
-					 <?php 
+					<?php 
 						if(count($errores)>0){ 
-						 foreach($errores as $clave => $value){echo $value."<br>";}
-						}
-						 ?>
-		            </div>
+							echo '<div class="grupo errores">';
+						 	foreach($errores as $clave => $value){echo $value."<br>";}
+							echo '</div>';
+						}						
+					?>
 					<div class="grupo contenedor_boton">
 						<input type="submit" name="enviar" value="Registro" class="boton">
 					</div>
@@ -139,35 +128,5 @@ function mostrarHtml(string $nick, string $correo, string $correo2,$errores) {
 		
 	<?php
 }
+
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../css/registrate.css">
-	<title>Registrate</title>
-</head>
-<body>
-
-    <?php
-        procesaRegistrate();
-    ?>
-
-	<!-- Esta comentado por que aparece en la parte de abajo de la pantalla
-		rn vez de en el cuadro informativo que aparecia antes
-	<div id="pswd_info">
-	    <img src="../img/ejemplo.png">
-	    <h5>La contraseña debe cumplir estos requisitos:</h5>
-	    <ul>
-		    <li id="letter" class="invalid">Necesita al menos <strong> una letra</strong>
-		    </li>
-		    <li id="capital" class="invalid">Necesita al menos <strong> una letra mayúscula</strong></li>
-		    <li id="number" class="invalid">Necesita al menos <strong> un número</strong></li>
-		    <li id="length" class="invalid">Necesita al menos <strong> 8 caracteres</strong></li>
-	    </ul>
-	</div> 
-</div>-->
-</body>
-</html>

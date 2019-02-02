@@ -32,14 +32,12 @@ class AutentificacionConBaseDeDatos
     //  - Debuelve el id_usuario si esta logeado para utilizarlo en $_SESSION
     //  - Si no existe en la base de datos devuelve false.
     public function existeUsuario(string $user, string $pass) {
-        try {
-            
+        try {            
             $sentenciaSQL = $this->dbPDO->query("SELECT * FROM Usuario WHERE
-            nick = '$user' AND contrasena = '$pass'");
+            nick = '$user'");
             $resultado = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
-
-            if(count($resultado) == true){
-                return $resultado[0]['id_usuario'];
+            if(count($resultado) == true && (password_verify($pass, $resultado[0]['contrasena']))) {
+                    return $resultado[0]['id_usuario'];
             }
         } catch (PDOException $e) {
             print "¡Error!: " . $e->getMessage() . "<br/>";
@@ -149,9 +147,9 @@ class AutentificacionConBaseDeDatos
     }
     
     // Falta probar -- Función que devuelve los datos de un UsuarioNC
-    public function obtenerUsuarioNC(string $id_usuarioNC) {
+    public function obtenerUsuarioNC(int $id_usuarioNC) {
         try {
-            $sentenciaSQL = $this -> dbPDO -> query("SELECT * FROM UsuarioNC WHERE id_usuarioNC = '$id_usuarioNC'");
+            $sentenciaSQL = $this -> dbPDO -> query("SELECT * FROM UsuariosNC WHERE id_usuarioNC = '$id_usuarioNC'");
             $usuarioNC = $sentenciaSQL -> fetchAll();
             return $usuarioNC;
             // $this -> dbPDO -> guardarUsuario($usuarioNC[0]['nombreNC'], $usuarioNC[0]['contrasenaNC'], $usuarioNC[0]['emailNC']);
@@ -201,7 +199,20 @@ class AutentificacionConBaseDeDatos
         }
     }
 
-
+    // Falta probar -- Función que comprueba si el id_usuario y el token coinciden en la base de datos 
+    public function comprobarToken(string $token, int $id_usuario): bool {
+        try {
+            $sentenciaSQL = $this -> dbPDO -> query("SELECT * FROM Token WHERE token = '$token' AND id_usuario = '$id_usuario';");
+            $resultado = $sentenciaSQL -> fetchAll();
+            print_r($resultado);
+            echo "ggggggggggggggggggggggggggggggggggggggggggggggggggggggggg";
+            return (count($resultado) == true);
+        } catch (PDOException $error) {
+            print "¡Error!: ".$error -> getMessage()."<br/>";
+            return false;
+        }
+    }
+     
 }
 
 ?>

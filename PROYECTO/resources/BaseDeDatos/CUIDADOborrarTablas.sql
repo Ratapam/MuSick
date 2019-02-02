@@ -11,3 +11,4 @@ DROP TABLE Autor;
 DROP TABLE Disco;
 DROP TABLE Estilo;
 DROP TABLE Usuario;
+DROP TABLE UsuariosNC;

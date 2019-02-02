@@ -23,20 +23,13 @@ if ($id_usuario != false){
     //Si introduce bien su alias y su contrasena, recuperamos el id_usuario 
     // de la consulta y creamos una sesion con una posicion loegeado y otra con su id 
     // y le redirigemos a la pagina principal.
-
-   
-   
-
     if(!isset($_SESSION['id'])){
       $_SESSION['id'] = $id_usuario;
       $_SESSION['logeado'] = true;
-    
-
         // Si pulsa el checck de recuerdame, creamos una cookie con su id y un token
         // serializados que contrastaremos con la base dedatos cuando quiera volver a acceder
         // a la base de datos
-        if(isset($_POST['recuerdame'])){
-         
+        if(isset($_POST['recuerdame'])){         
           $token = generateToken();
           $tipo = "recuerdame";
           echo $id_usuario;
