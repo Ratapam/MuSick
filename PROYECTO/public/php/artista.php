@@ -1,5 +1,20 @@
 <?php
+/*
+    $nombreAutor = "";
+    $informacionAutor = "";
 
+    if (isset($_GET['id_autor'])) {
+        require_once('../../src/Clases/Autor.php');
+        $autor = new Autor($_GET['id_autor']);
+        $discos = $autor -> saberDiscosAutor();
+        $informacionAutor = $autor -> informacion;
+        $nombreAutor = $autor -> nombre;
+        
+    } else {
+        header('Location: principal.php');
+        die();
+    }
+*/
      $artistas = [
         1 => "michael_jackson",
         2 => "amaral",
@@ -160,8 +175,8 @@
             de música pop más exitosa en el mundo.​ Sin embargo, su música incluyó una amplia
             acepción de subgéneros como el rhythm and blues (soul y funk), rock, disco y dance."
     ];
-
-    function mostrarDatosArtista(int $id_artista) {
+    
+    function mostrarDatosAutor(int $id_artista) {
         global $artistas;
         global $informacionArtista;
         echo '
@@ -227,7 +242,33 @@
 </head>
 <body>
     <main>
+        <!--
+        <div id="nombreArtista">
+            <?php // strtoupper(str_replace("_", " ", $nombreAutor)); ?>
+        </div>
+        <div id="datosArtista">
+        <div class="col-12 col-md-6">
+        <img src="../img/img_artista/artistas/'<?= //$nombreAutor ?>'.png">
+        </div>
+        <div class="col-12 col-md-6">
+            <?= //$informacionAutor ?>
+        </div>
+        </div>
+        <div class="discos">
         <?php
+            //foreach ($discos as $id_disco => $nombreDisco) {
+        ?>    
+                <table class="col-">
+                <caption><?= //$nombreDisco ?></caption>
+                <?php
+//                mostrarCanciones($id_artista, $id_disco);
+//            echo '</table>';
+//        }
+                ?>
+            </div>';
+    -->
+        <?php
+        
 
             // if (isset($_GET["id_artista"])) {
             //  mostrarDatosArtista($_GET["id_artista"]);

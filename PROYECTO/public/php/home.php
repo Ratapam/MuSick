@@ -10,12 +10,14 @@ $carpetas = [
   "generos"
 ];
 
-function crearImagen($dato, $numero) {
+function crearImagen($id_autor, $nombre) {
+
+
   echo '
   <div class="col-sm-12 col-md-6 col-lg-3">
-  <a href="artista.php" class="d-block mb-4 h-100">
+  <a href="autor.php?id_autor='.$id_autor.'" class="d-block mb-4 h-100">
   <img class="embed-responsive-item" control
-  src="../img/imgPrincipal/'.$dato.'/'.$dato.$numero.'.png"/>
+  src="../img/img_artista/artistas/'.$nombre.'.png"/>
   </img>
   </a>
   </div>';

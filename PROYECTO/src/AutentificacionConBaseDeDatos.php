@@ -114,7 +114,7 @@ class AutentificacionConBaseDeDatos
         }
     }
 
-    // Falta probar -- Función que guarda en la base de datos un Usuario ya confirmado.
+    // Función que guarda en la base de datos un Usuario ya confirmado.
     public function guardarUsuario(string $contrasena, string $nick, string $correo) {
         try {
             $sentencia = $this -> dbPDO -> prepare("INSERT INTO Usuario (contrasena, nick, correo) VALUES (:contrasena, :nick, :correo)");
@@ -129,7 +129,7 @@ class AutentificacionConBaseDeDatos
         }
     }
 
-    // Falta probar -- Función que comprueba si el nick esta disponible.
+    // Función que comprueba si el nick esta disponible.
     public function nickDisponible(string $nick) {
         try {
             $sentenciaSQL = $this -> dbPDO -> query("SELECT * FROM Usuario WHERE nick = '$nick'");
@@ -146,7 +146,7 @@ class AutentificacionConBaseDeDatos
         }
     }
     
-    // Falta probar -- Función que devuelve los datos de un UsuarioNC
+    // Función que devuelve los datos de un UsuarioNC
     public function obtenerUsuarioNC(int $id_usuarioNC) {
         try {
             $sentenciaSQL = $this -> dbPDO -> query("SELECT * FROM UsuariosNC WHERE id_usuarioNC = '$id_usuarioNC'");
@@ -160,7 +160,7 @@ class AutentificacionConBaseDeDatos
 
     }
 
-    // Falta probar -- Función que borra un token de la tabla Token
+    // Función que borra un token de la tabla Token
     public function borrarToken(int $id_usuario) {
         try {
             $sentencia = $this -> dbPDO -> prepare("DELETE FROM Token WHERE id_usuario = $id_usuario");
@@ -172,7 +172,7 @@ class AutentificacionConBaseDeDatos
         }
     }    
     
-    // Falta probar -- Función que borra un usuario de la tabla UsuariosNC
+    // Función que borra un usuario de la tabla UsuariosNC
     public function borrarUsuarioNC(int $id_usuario) {
         try {
             $sentencia = $this -> dbPDO -> prepare("DELETE FROM UsuariosNC WHERE id_usuarioNC = $id_usuario");
@@ -184,7 +184,7 @@ class AutentificacionConBaseDeDatos
         }
     }
 
-    // Falta probar -- Función que devuelve el id_usuarioNC
+    // Función que devuelve el id_usuarioNC
     public function saberIdusuarioNC(string $email): int {
         try {
             $sentenciaSQL = $this -> dbPDO -> query("SELECT id_usuarioNC FROM UsuariosNC WHERE emailNC = '$email'");
@@ -199,7 +199,7 @@ class AutentificacionConBaseDeDatos
         }
     }
 
-    // Falta probar -- Función que comprueba si el id_usuario y el token coinciden en la base de datos 
+    // Función que comprueba si el id_usuario y el token coinciden en la base de datos 
     public function comprobarToken(string $token, int $id_usuario): bool {
         try {
             $sentenciaSQL = $this -> dbPDO -> query("SELECT * FROM Token WHERE token = '$token' AND id_usuario = '$id_usuario';");
@@ -213,6 +213,33 @@ class AutentificacionConBaseDeDatos
         }
     }
      
+    // Falta probar -- Función que devuelve una array con todos los nombre de autores de la base de datos
+    public function saberTodosLosAutores() {
+        try {
+            $sentenciaSQL = $this -> dbPDO -> query("SELECT nombre FROM Autor");
+            $autores = $sentenciaSQL -> fetchAll();
+            return $autores;
+        } catch (PDOException $error) {
+            print "¡Error!: ".$error -> getMessage()."<br/>";
+            return false;
+        }
+    }
+
+    // Falta probar -- Función que devuelve una array con todos los nombre de autores de la base de datos
+    public function saberTodosLosEstilos() {
+        try {
+            $sentenciaSQL = $this -> dbPDO -> query("SELECT nombre FROM Estilo");
+            $estilos = $sentenciaSQL -> fetchAll();
+            return $estilos;
+        } catch (PDOException $error) {
+            print "¡Error!: ".$error -> getMessage()."<br/>";
+            return false;
+        }
+    }
+
+    
+
+
 }
 
 ?>
