@@ -21,6 +21,13 @@ header > div > div:nth-of-type(1) > span > img {
 	margin-top: 1em;
 }
 
+header > div > div:nth-of-type(2) > input {
+	width: 80%;
+	border-radius: 2em;
+	margin-top: 2.5em;
+	text-align: center;
+}
+
 header > div > div:nth-of-type(3) > span > img{
 	width: 3.5em;
 	border-radius: 5%;
@@ -29,11 +36,12 @@ header > div > div:nth-of-type(3) > span > img{
 
 }
 
-header > div > div:nth-of-type(2) > input {
-	width: 80%;
-	border-radius: 2em;
-	margin-top: 2.5em;
+header > div > div:nth-of-type(4) > span > img{
+	width: 3.5em;
+	border-radius: 5%;
+	margin-top: 1em;
 	text-align: center;
+
 }
 
 main iframe{

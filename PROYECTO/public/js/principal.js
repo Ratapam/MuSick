@@ -1,8 +1,12 @@
  /* -- Eventos click en perfil buscar y logo -- */
   //let div1 = document.querySelector('header > div > div:nth-of-type(1) > a');
-
+  
+  //Logo que te lleva al home
   let span1 = document.querySelector('header > div > div:nth-of-type(1) > span');
+  //Imagen del usuario que te lleva a su perfil
   let span2 = document.querySelector('header > div > div:nth-of-type(3) > span');
+  //Icono de cerrar sesion 
+  let span2 = document.querySelector('header > div > div:nth-of-type(4) > span');
   //let input = document.querySelector('header > div > div:nth-of-type(2) > ');
   let biblioteca = document.getElementById('biblioteca')
   //div1.document.addEventListener('click',cambiarIframe1);

@@ -39,9 +39,14 @@ if(isset($_SESSION['logeado'])){
       <div class="col-4">
         <input type="text" onkeypress= "if(event.keyCode == 13) cambiarIframe4()"  placeholder="Buscar..." autofocus />
       </div>
-      <div class="col-4"><span>
+      <div class="col-3"><span>
         <img src="../img/usu.png">
       </span>
+      </div>
+      <div class="col-1">
+        <span>
+          <img src="../img/cerrarSesion.jpeg">
+        </span>
       </div>
   </div>
   </header>
