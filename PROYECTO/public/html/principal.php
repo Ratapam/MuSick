@@ -45,7 +45,7 @@ if(isset($_SESSION['logeado'])){
       </div>
       <div class="col-1">
         <span>
-          <img src="../img/cerrarSesion.jpeg">
+          <a href="../index.php?redirigido=cierreSesion"> <img src="../img/cerrarSesion.jpeg"></a>
         </span>
       </div>
   </div>

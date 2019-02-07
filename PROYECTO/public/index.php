@@ -3,7 +3,19 @@ session_start();
 require_once('../src/AutentificacionConBaseDeDatos.php');
 
 if (isset($_COOKIE['recuerdame']) || isset($_SESSION['logeado'])) {
-        if (isset($_COOKIE['recuerdame'])) {
+        if(isset($_GET['redirigido'])){
+    
+            if($_GET['redirigido']== 'cierreSesion'){
+                if(isset($_COOKIE['recuerdame'])){
+                setcookie('recuerdame'," ",time() - 999999999,"/");
+                }
+                session_destroy();
+                header('location: php/login.php');
+                die();
+            }
+        
+        }
+        elseif (isset($_COOKIE['recuerdame'])) {
             $arrRecuerdame = $_COOKIE['recuerdame'];
             $arrRecuerdame = unserialize($arrRecuerdame);
             $id_usuario = $arrRecuerdame['id_usuario'];
