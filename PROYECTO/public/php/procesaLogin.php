@@ -56,12 +56,12 @@ if ($id_usuario != false){
           setcookie("recuerdame",$arrRecuerdame,time() + 3600,"/");
           
         }
-    header('Location: ../html/principal.php');
+    header('Location: principal.php');
     die();
     }
           
   } else {
-    header('Location: ../php/login.php?redirigido=0');
+    header('Location: login.php?redirigido=0');
     die();
 }
 

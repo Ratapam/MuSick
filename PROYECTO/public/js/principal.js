@@ -6,7 +6,7 @@
   //Imagen del usuario que te lleva a su perfil
   let span2 = document.querySelector('header > div > div:nth-of-type(3) > span');
   //Icono de cerrar sesion 
-  let span2 = document.querySelector('header > div > div:nth-of-type(4) > span');
+  //let span2 = document.querySelector('header > div > div:nth-of-type(4) > span');
   //let input = document.querySelector('header > div > div:nth-of-type(2) > ');
   let biblioteca = document.getElementById('biblioteca')
   //div1.document.addEventListener('click',cambiarIframe1);
@@ -37,7 +37,7 @@
 
     let iframe = document.getElementById('iframe');
 
-      iframe.src = 'perfil.html';
+      iframe.src = 'perfil.php';
 
   }
 
@@ -60,7 +60,7 @@
 
    }
 
-  /* -- Reproductor --- */
+  /* -- Reproductor ---
     window.onload = function () {
       var audio = document.getElementById("audio");
       audio.volume = document.getElementById("volume").value;
@@ -72,9 +72,9 @@
       audio.ontimeupdate = function () {
         document.getElementById("time").max = audio.duration;
         document.getElementById("time").value = audio.currentTime;
-      }
+      } 
       // Para poner el nombre de la canción debajo. -- NO FUNCIONA
       // let nombreCancion = audio.currentSrc.substring(lastIndexOf("/", audio.currentSrc), audio.currentSrc.length);
       // document.getElementById("cancion").innerHTML = nombreCancion;
       // document.getElementById("cancion").innerHTML = audio.currentSrc;
-    }
+    }*/

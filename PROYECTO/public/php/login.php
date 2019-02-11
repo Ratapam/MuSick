@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['logeado'])){
 	if($_SESSION['logeado'] == true){
-		header('location: ../html/principal.php');
+		header('location: principal.php');
 	}
 }
 ?>
@@ -47,13 +47,13 @@ if(isset($_SESSION['logeado'])){
 					<div class="form-group">
 						<input type="submit" name="enviar" value="Login" class="btn float-right login_btn">
 						<!-- La linea de abajo hay que borrarla, solo esta puesta para trampear el login y se redirija a la pagina principal sin autentificacion -->
-						<a href="principal.html" class="enlaces"></a>
+						
 					</div>
 				</form>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					¿Todavía no tienes cuenta?<a href="../php/registrate.php" class="enlaces">Regístrate</a>
+					¿Todavía no tienes cuenta?<a href="registrate.php" class="enlaces">Regístrate</a>
 				</div>
 				<div class="d-flex justify-content-center">
 					<a href="#" class="enlaces">¿Has olvidado tu contraseña?</a>

@@ -27,7 +27,7 @@ if (isset($_COOKIE['recuerdame']) || isset($_SESSION['logeado'])) {
               // para  introducirlo en la sesion
                 $_SESSION['id'] = $id_usuario;
                 $_SESSION['logeado'] = true; 
-                header('location: html/principal.php');
+                header('location: php/principal.php');
                 die();
             } else {
                 header('location: php/login.php');
@@ -35,7 +35,7 @@ if (isset($_COOKIE['recuerdame']) || isset($_SESSION['logeado'])) {
             }
         } elseif (isset($_SESSION['logeado'])){
             if ($_SESSION['logeado'] === true){
-                header('location: html/principal.php');
+                header('location: php/principal.php');
                 die();
             } else {
                 header('location: php/login.php');
