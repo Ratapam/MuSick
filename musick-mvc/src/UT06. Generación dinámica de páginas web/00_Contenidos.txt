@@ -1,0 +1,6 @@
+Hora:20
+
+Generación dinámica de páginas web
+— Mecanismos de separación de la lógica de negocio.
+— Controles de servidor.
+— Mecanismos de generación dinámica del interface web.

@@ -1,0 +1,19 @@
+<h1>Bienvenido <?= $data['perfil']; ?></h1>
+<table border>
+
+<tr>
+    <td>ID</td><td>Titulo</td><td>Texto</td><td>Fecha</td>
+</tr>
+    <?php $noticia = $data['noticia']; ?>
+        <tr>
+            <td><?=$noticia ->getId();?> </td>
+            <td><?=$noticia ->getTitulo();?> </td>
+            <td><?=$noticia ->getTexto();?> </td>
+            <td><?=$noticia ->getFecha();?> </td>
+        </tr>
+    
+</table>
+Publicidad:
+<br>
+
+<?= $data['publicidad']; ?>

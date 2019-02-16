@@ -1,0 +1,86 @@
+body {
+  padding-top: 54px;
+}
+/*.container{
+	padding: 0;
+  margin: 0;
+}*/
+.logo{
+	width: 80%;
+}
+main{
+	padding: 5%;
+}
+td{
+	width: 15%;
+	text-align: center;
+}
+th{
+	text-align: center;
+}
+
+tbody > tr > td:nth-of-type(6){
+	text-align: center;
+}
+tbody > tr > td:nth-of-type(6) > span > img{
+	width: 2em;
+	height: 2em;
+	background-color: red;
+}
+#biblio td:first-child{
+	width: 5%;
+}
+
+button > img{
+	width: 100%;
+}
+p > button{
+	width: 25%;
+}
+.usu{
+	width: 10%;
+	float: right;
+	opacity: 0.8;
+	border-radius: 30%;
+	/*margin: 2%;*/
+	top: 8%;
+}
+nav a{
+	width: 50%;
+}
+nav a img{
+	width: 100%;
+}
+.buscador{
+	border-radius: 5%;
+	margin: 2%;
+	float: left;
+	width: 40%;
+}
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+  .container a{
+  	width: 20%;
+  }
+  .usu{
+  	position: static;
+	width: 50%;
+	float: right;
+	opacity: 0.8;
+	border-radius: 30%;
+}
+.img{
+	width: 600%;
+	border: 1px solid #dee2e6;
+	border-radius: .25rem;
+	/*padding: .25rem;
+	height: auto;*/
+}
+}

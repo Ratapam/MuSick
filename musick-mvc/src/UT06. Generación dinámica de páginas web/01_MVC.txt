@@ -1,0 +1,88 @@
+Modelo-Vista-Controlador
+========================
+
+Patrón de diseño
+****************
+
+Soluciones buenas (Bien estructuradas, fáciles de probar, separación de lógica
+,etc. ) a problemas que nos solemos encontrar.
+
+Ejemplo:
+.- Singletone
+.- Iterator
+.- Observer
+.- Command
+.- etc.
+
+Modelo-vista-controlador es uno de ellos.
+
+MVC
+***
+Creado por Trygve Reenskaug en 1979 para separar la lógica de las aplicaciones
+GUI.
+NOTA: Existen diferentes variantes debidos a la tecnología concreta y pequeños
+matices sobre la comunicación entre componentes.
+
+
+Original
+https://upload.wikimedia.org/wikipedia/commons/a/a0/MVC-Process.svg
+
+Explicación del patrón original
+
+Adaptación web:
+
+Los elementos están distribuidos en varios sistemas.
+
+           Usuario
+          /       \
+      solicita  visualiza
+       /             \
+  CONTROLADOR  ->   VISTA
+     | ^
+     v |
+   MODELO
+
+
+MVC - elementos
+***************
+
+Fuente wikipedia
+
+El Modelo: Es la representación de la información con la cual el sistema opera,
+por lo tanto gestiona todos los accesos a dicha información, tanto consultas
+como actualizaciones, implementando también los privilegios de acceso que se
+hayan descrito en las especificaciones de la aplicación (lógica de negocio).
+
+El Controlador: Responde a eventos (usualmente acciones del usuario) e invoca
+peticiones al 'modelo' cuando se hace alguna solicitud sobre la información.
+También puede enviar comandos a su 'vista' asociada si se solicita un cambio
+en la forma en que se presenta el 'modelo', por tanto se podría decir que
+el 'controlador' hace de intermediario entre la 'vista' y el 'modelo'
+
+La Vista: Presenta el 'modelo' (información y lógica de negocio) en un formato
+adecuado para interactuar (usualmente la interfaz de usuario), por tanto
+requiere de dicho 'modelo' la información que debe representar como salida.
+
+
+MVC - interacción web
+*********************
+
+1.- El usuario pincha en el link para obtener la segunda página de un listado
+2.- El controlador recibe la petición y sus parámetros
+    NOTA: ¿Quién lleva esta información al controlador? Enrutador
+3.- El controlador interactúa con el modelo para obtener la información
+4.- El controlador le pasa la información a la vista que se devuelve al usuario
+    NOTA: ¿La vista será un HTML+CS+JS? No, también puede ser json, xml, etc.
+
+
+MVC - principios avanzados
+**************************
+
+KISS
+Keep It Simple Stupid
+"Simplicity is the ultimate sophistication."
+
+Diseño
+1º Modelos gordos!        \
+2º Módulos de utilidad    -- La lógica de negocio debe estar aquí
+3º Vistas-templates delgados y estúpidos

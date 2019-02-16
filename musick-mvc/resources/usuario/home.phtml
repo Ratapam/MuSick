@@ -1,0 +1,50 @@
+<?php
+
+// Arrays Base de Datos
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Principal</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+  crossorigin="anonymous">
+  <link href="../css/home.css" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+  for ($x = 1; $x <= 4; $x++) {?>
+  
+  
+     <h1 class="my-4 text-center text-lg-left"><?php strtoupper(str_replace("_", " ", $dato));?></h1>
+     <div class="row text-center text-lg-left">
+      <?php
+      for ($x = 1; $x <= 4; $x++) {?>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+        <a href="autor.php?id_autor='<?=$id_autor?>'" class="d-block mb-4 h-100">
+        <img class="embed-responsive-item" control
+        src="../../img/img_artista/artistas/'<?=$nombre?>'.png"/>
+        </img>
+        </a>
+        </div>
+       <?php
+          }
+      ?>
+      </div>
+
+    <?php
+    }
+    estructuraHtml($carpetas);
+    ?>
+  </div>
+
+
+</main>
+</body>
+
+</html>

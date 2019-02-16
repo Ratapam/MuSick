@@ -1,0 +1,70 @@
+<?php 
+/*session_start();
+if(isset($_SESSION['logeado'])){
+  $_SESSION['logeado'] == true;
+}else{
+  header('refresh:1,../index.php');
+  die();
+}*/
+?>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Principal</title>
+  <link href="../../css/principal.css" rel="stylesheet">
+  <link href="../../css/minibootstrap.css" rel="stylesheet">
+  <style>
+</style>
+<script>
+  /* -- Eventos click en perfil buscar y logo --
+  let div1 = document.querySelector('header > div > div:nth-of-type(1)');
+
+  let div3 = document.querySelector('header > div > div:nth-of-type(3)');
+
+  div1.document.addEventListener('click',cambiarIframe);
+
+  div3.document.addEventListener('click',cambiarIframe);
+*/
+
+  </script>
+</head>
+<body>
+  <header>
+    <div class="row">
+      <div class="col-4"><span><img src="../img/logo.png"></span></div>
+      <div class="col-4">
+        <input type="text" onkeypress= "if(event.keyCode == 13) cambiarIframe4()"  placeholder="Buscar..." autofocus />
+      </div>
+      <div class="col-3"><span>
+        <img src="../img/usu.png">
+      </span>
+      </div>
+      <div class="col-1">
+        <span>
+          <a href="../index.php?redirigido=cierreSesion"> <img src="../../img/cerrarSesion.jpeg"></a>
+        </span>
+      </div>
+  </div>
+  
+  </header>
+  <main class="container">
+    <iframe id="iframe" src="/usuario/home"></iframe>
+  </main>
+<footer class="col-3 col-sm-12 col-lg-12">
+    
+        <button type="button" id="biblioteca">
+          <a href="biblioteca.html">
+            <img src="../img/imgReproductor/library.png">
+          </a>
+        </button>
+        <audio controls >
+          <source src="../musica/cancion1.mp3" type="audio/ogg">
+        </audio> 
+  </footer>
+</body>
+ <script src="../js/principal.js"></script>
+</html>

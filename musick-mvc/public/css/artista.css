@@ -1,0 +1,86 @@
+body {
+  font-family: Einstein -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-image: url("../img/img_artista/fondoArtistas.png");
+  background-size: auto;
+  margin: 0 10%;
+}
+
+#nombreArtista {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bolder;
+  padding: 1em;
+}
+
+#datosArtista {
+  margin: 0 auto;
+  display: flex;
+}
+
+#datosArtista > div:nth-of-type(2) {
+  padding: 1.5em;
+  margin-left: 1em;
+  text-align: justify;
+  border-radius: 1em;
+  background-color: whitesmoke;
+  border: 2px solid lightgrey;
+  opacity: 0.8;
+}
+
+#datosArtista > div > img {
+  width: 100%;  
+  border: 2px solid whitesmoke;
+  border-radius: 1em;
+}
+
+@media (max-width: 768px) {
+  #datosArtista {
+    text-align: left;
+    display: unset;
+  }
+
+  #datosArtista > div > img {
+    border-radius: 1em 1em 0 0;
+  }
+
+  #datosArtista > div:nth-of-type(2) {
+    border-radius: 0 0 1em 1em;
+    padding: 1em;
+    margin-left: 0;
+    text-align: justify;
+  }
+}
+
+table {
+  margin: 1em auto;
+  padding: .5em;
+  border-radius: 0 0 .3em .3em;
+  background-color: whitesmoke;
+  opacity: 0.8;
+}
+
+caption {
+  text-align: center;
+  background-color: lightgrey;
+  border-radius: .3em .3em 0 0;
+  padding: .5em;
+  opacity: 0.8;
+}
+
+tr > td:nth-of-type(1),
+tr > td:nth-of-type(3) {
+  width: 1em;
+}
+
+tr > td:nth-of-type(2) {
+  padding-left: 1em;
+}
+
+tr > td > button > img {
+  max-width: 1em;
+}
+
+td {
+  border-bottom: 1px solid rgb(143, 86, 86);
+}

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+    background-image: url('../img/fondo2.jpg');
+    background-color: lightblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.tarjeta {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    width: 400px;
+}
+
+.cabecera {
+    color: white;
+    font-size: 1.75rem;
+    padding: 0;
+}
+
+.cabecera > h3 {
+    margin-top: 0;
+    font-weight: lighter;
+}
+
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.grupo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-block-end: .8em;
+}
+
+.icono {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: rgb(234, 226, 153);
+    padding: .3em 1em;
+    border: 1px solid black;
+    border-radius: 5px 0 0 5px;
+}
+
+.input {
+    border-radius: 0 5px 5px 0;
+    border: 1px solid black;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+}
+
+.contenedor_boton {
+    align-self: flex-end;
+}
+
+.boton {
+    background-color: rgb(234, 226, 153);
+    border-radius: 5px;
+    padding: .6rem 1.2rem;
+    font-size: 1.1rem;
+    border: 1px solid black;
+}
+
+.errores { 
+    color: red; 
+    background-color: rgb(234, 226, 153);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: .5rem;
+}
