@@ -16,7 +16,6 @@ if(isset($_SESSION['logeado'])){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Principal</title>
   <link href="../../css/principal.css" rel="stylesheet">
-  <link href="../../css/minibootstrap.css" rel="stylesheet">
   <style>
 </style>
 <script>
@@ -34,37 +33,42 @@ if(isset($_SESSION['logeado'])){
 </head>
 <body>
   <header>
-    <div class="row">
-      <div class="col-4"><span><img src="../img/logo.png"></span></div>
-      <div class="col-4">
-        <input type="text" onkeypress= "if(event.keyCode == 13) cambiarIframe4()"  placeholder="Buscar..." autofocus />
-      </div>
-      <div class="col-3"><span>
-        <img src="../img/usu.png">
-      </span>
-      </div>
-      <div class="col-1">
+    <div>
+      <div>
         <span>
-          <a href="../index.php?redirigido=cierreSesion"> <img src="../../img/cerrarSesion.jpeg"></a>
+          <img src="../../img/logoNuevo.png">
         </span>
       </div>
-  </div>
-  
+      <div>
+        <input type="text" onkeypress= "if(event.keyCode == 13) cambiarIframe4()"  placeholder="Buscar..." autofocus />
+      </div>
+      <div>
+        <span>
+          <img src="../../img/usu.png">
+        </span>
+      </div>
+      <div>
+        <span>
+          <a href="../../index.php?redirigido=cierreSesion"> <img src="../../img/cerrarSesion.jpeg"></a>
+        </span>
+      </div>
+    </div>  
   </header>
   <main class="container">
     <iframe id="iframe" src="/usuario/home"></iframe>
   </main>
-<footer class="col-3 col-sm-12 col-lg-12">
-    
-        <button type="button" id="biblioteca">
-          <a href="biblioteca.html">
-            <img src="../img/imgReproductor/library.png">
-          </a>
-        </button>
-        <audio controls >
-          <source src="../musica/cancion1.mp3" type="audio/ogg">
-        </audio> 
+  <footer>    
+    <div>
+      <button type="button" id="biblioteca">
+        <a href="biblioteca.html">
+          <img src="../../img/imgReproductor/library.png">
+        </a>
+      </button>
+      <audio controls >
+        <source src="../../public/musica/cancion1.mp3" type="audio/ogg">
+      </audio> 
+    </div>
   </footer>
 </body>
- <script src="../js/principal.js"></script>
+ <script src="../../js/principal.js"></script>
 </html>

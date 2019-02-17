@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Principal</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+  crossorigin="anonymous">
+  <link href="/css/artista.css" rel="stylesheet">
+  <link href="/css/minibootstrap.css" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+    <div id="nombreArtista">
+        <?php echo strtoupper($data[0]['nombre']);?>
+    </div>
+    <div id="datosArtista">
+        <div class="col-12 col-md-6">
+            <img src="../../img/img_artista/artistas/<?= str_replace(" ", "_", $data[0]['nombre']);?>.png">
+        </div>
+        <div class="col-12 col-md-6">
+            <?= $data[0]['informacion'];?>
+        </div>
+    </div>
+    <div class="discos">
+        <?php foreach ($data['discos'] as $numeroDisco => $nombreDisco) { ?>
+            <table class="col-">
+                <caption>
+                    <?= strtoupper($data['discos'][$numeroDisco]['nombre']); ?>
+                </caption>        
+                <?php 
+                    $contador = 0;
+                    foreach ($data['discos'][$numeroDisco][$nombreDisco['id_disco']] as $id_cancion => $cancion) { ;
+                ?>                    
+                <tr>
+                    <td>
+                        <?php echo ucfirst($cancion['nombre']); ?>
+                    </td>
+                    <td>
+                        <button type="button">
+                            <img src="../../img/img_artista/mas.png">
+                        </button>
+                    </td>
+                </tr>
+                <?php } ?>
+            </table>
+        <?php } ?>
+    </div>
+  </main>
+
+</body>
+</html>

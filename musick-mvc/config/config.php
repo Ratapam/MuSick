@@ -1,6 +1,6 @@
 <?php
 
-Config::set('site.name', 'Mi super proyecto MVC');
+Config::set('site.name', 'Musick');
 
 Config::set('db.host', 'localhost');
 Config::set('db.name', 'musick');

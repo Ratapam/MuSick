@@ -2,8 +2,7 @@
 
 class BaseModel
 {
-
-   
+    
     protected $db;
     protected static $lista_info;
     private $data;
@@ -13,8 +12,7 @@ class BaseModel
      * getAlgo, getOtracosa
      */
 
-     private function estaEnlalistaDatos($nombre){
-       
+     private function estaEnlalistaDatos($nombre){       
          return in_array($nombre, static::$lista_info);
      }
 
@@ -24,7 +22,6 @@ class BaseModel
         print_r($data_row);
         if(count($data_row)==0){
             $this -> data= array_fill_keys(static::$lista_info,null);
-
         }else{
             $this -> data = array_combine(static::$lista_info,$data_row);
         }
@@ -32,8 +29,6 @@ class BaseModel
 
     public static function getAll($page= 0,$num= 0){
         $db = App::getDB();
-        
-
         $nombre_clase = get_called_class();
         $nombre_tabla = strtolower(substr($nombre_clase,5));
         $campos_para_select = implode(",",static::$lista_info);
@@ -50,8 +45,7 @@ class BaseModel
     public function __call($nombre,$dato){
         $dato_pedido = strtolower(substr($nombre,3));
         $accion = substr($nombre,0,3);
-        if(!$this->estaEnlalistaDatos($dato_pedido)){
-            
+        if(!$this->estaEnlalistaDatos($dato_pedido)){            
             return "Error";
         }else{
             if($accion == "get"){
@@ -65,15 +59,11 @@ class BaseModel
 
       public static function getById($id){
         $db = App::getDB();
-        
-
         $nombre_clase = get_called_class();
         $nombre_tabla = strtolower(substr($nombre_clase,5));
         $campos_para_select = implode(",",static::$lista_info);
-        $sqlSelect  = "Select $campos_para_select from $nombre_tabla where id = ? ";
-        
-        $resultado = $db -> ejecutar($sqlSelect,$id);
-        
+        $sqlSelect  = "Select $campos_para_select from $nombre_tabla where id = ? ";        
+        $resultado = $db -> ejecutar($sqlSelect,$id);        
         return $resultado[0];
     }
     
@@ -81,14 +71,10 @@ class BaseModel
 
 
     public function save() {
-
         $db = App::getDB();
-        
-
         $nombre_clase = get_called_class();
         $nombre_tabla = strtolower(substr($nombre_clase,5));
         $campos_para_insert = implode(",",array_slice(static::$lista_info,1));
-
         $parametros_para_insert = implode(",",array_fill(0,count(static::$lista_info)-1,'?'));
         echo $parametros_para_insert."91\n";
         $id = $this -> data['id'];
@@ -101,17 +87,12 @@ class BaseModel
                 $parametros_para_update .= $claves[$i]."=? ";
             }
         }
-       
-    
-
         if ($this -> getById($id) == null) {
             $sqlInsert = "INSERT INTO $nombre_tabla ($campos_para_insert) VALUES (?, ?, ?)";
             
             $resultado = $this -> db -> ejecutar($sqlInsert, ...array_values(array_slice($this->data,1)));
             print_r($resultado);
             echo "rsultado insert";
-
-
             /*if(is_array($resultado)){
                 $this -> setId($this ->db -> getLastId());
                 $resultado[] = $this -> getId();
@@ -121,13 +102,11 @@ class BaseModel
             /*$this -> db -> ejecutar('UPDATE noticias SET titulo = ?, texto = ?, fecha = ? WHERE id = ?', $this -> titulo, $this -> texto, $this -> fecha, $this -> id);*/
             $sqlUpdate =  "UPDATE $nombre_tabla SET $parametros_para_update where id = $id";
             $resultado = $this -> db -> ejecutar($sqlUpdate, ...array_values($this->data));
-
             /*if(is_array($resultado)){
               $resultado[] = $this ->getId();
              }*/
              return $resultado;
-         } 
-      
+         }
     }
 
 }

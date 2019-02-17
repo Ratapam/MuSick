@@ -2,13 +2,13 @@
 /* --- CUIDADO --- */
 /* --- Para borrar todas las tablas --- */
 
-DROP TABLE Administradores;
-DROP TABLE Escuchado_recientemente;
-DROP TABLE Lista_reproduccion;
-DROP TABLE Token;
-DROP TABLE Cancion;
-DROP TABLE Autor;
-DROP TABLE Disco;
-DROP TABLE Estilo;
-DROP TABLE Usuario;
-DROP TABLE UsuariosNC;
+DROP TABLE administrador;
+DROP TABLE escuchado_recientemente;
+DROP TABLE lista_reproduccion;
+DROP TABLE token;
+DROP TABLE cancion;
+DROP TABLE autor;
+DROP TABLE disco;
+DROP TABLE estilo;
+DROP TABLE usuario;
+DROP TABLE usuariosNC;

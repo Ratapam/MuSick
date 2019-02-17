@@ -1,29 +1,9 @@
 body {
 	padding-top: 6em;
 	padding-bottom: 6em;
-	background-image: url("../img/imgPrincipal/fondoPrincipal.png");
+	background-color: #20244b;
 	background-size: auto;
 	color: white;
-}
-.logo{
-	width: 15%;
-}
-.usu{
-	width: 8%;
-	float: right;
-	opacity: 0.8;
-	border-radius: 30%;
-}
-.buscador{
-	border-radius: 5%;
-}
-.video{
-	max-width: 100%;
-	min-width: 100%;
-	border: 1px solid #dee2e6;
-	border-radius: .25rem;
-	padding: .25rem;
-	height: auto;
 }
 
 /* --------------------- */
@@ -33,14 +13,11 @@ main > div > div > a > img {
 	max-height: 100%;
 	min-width: 100%;
 	min-height: 100%;
-	padding: 1em;
-	border-radius: 2em;
+	padding: .5em;
+	border-radius: 50%;
+	border: 5px double #581d37;
 }
 
-/* --------------------- */
-
-@media (min-width: 992px) {
-	body {
-		padding-top: 2em;
-	}
+main > div > div {
+	padding: 1em;
 }
