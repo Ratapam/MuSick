@@ -7,16 +7,18 @@ class ModelAutor extends BaseModel{
         return"<h1>Hola</h1>";
     }
 
-    public function presentacion() {
+    public static function presentacion($id_autor) {
 
         // saberDatos($_GET['id_autor']);
         // saberDatos(1);
         // return $resultado;
-        $id_autor = $_GET['id_autor'];
+        //$id_autor = $_GET['id_autor'];
         //$id_autor = 3;
         $db = App::getDB();
-        $resultado = $db -> ejecutar("SELECT * FROM autor WHERE id_autor = $id_autor");
-        $db2 = App::getDB();
+        $sentenciaSQL = "SELECT * FROM autor WHERE id_autor = ?";
+        $params = $id_autor;
+        $resultado = $db -> ejecutar($sentenciaSQL,$params);
+       /* $db2 = App::getDB();
         $resultado2 = $db2 -> ejecutar("SELECT DISTINCT disco.* FROM disco, cancion WHERE cancion.id_disco = disco.id_disco AND cancion.id_autor = $id_autor");
         $resultado['discos'] = $resultado2;
         $db3 = App::getDB();
@@ -35,7 +37,7 @@ class ModelAutor extends BaseModel{
         // echo "<pre>";
         // print_r($resultado['discos']);
         // print_r($resultado);
-        // echo "</pre>";
+        // echo "</pre>";*/
         return $resultado;
     }
 

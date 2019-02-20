@@ -7,9 +7,12 @@ class ControllerAutor extends BaseController{
        $this->data=  ModelAutor::principal();
     }
 
-    function presentacion(){
+    function presentacion($id_autor){
 
-        $this->data=  ModelAutor::presentacion();
+        $this->data['autor']=  ModelAutor::presentacion($id_autor);
+        $this->data['canciones']=  ModelCancion::darCanciones($id_autor);
+       // $this->data['estilo']=  ModelEstilo::darEstilo($this->data['canciones']['id_estilo']);
+        $this->data['discos']=  ModelDisco::darDiscos($id_autor);
      }
 
 

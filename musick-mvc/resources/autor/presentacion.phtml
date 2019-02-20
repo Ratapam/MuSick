@@ -4,48 +4,66 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Principal</title>
-  <link href="/css/artista.css" rel="stylesheet">
+ <!-- <link href="/css/artista.css" rel="stylesheet"> -->
   <link href="/css/minibootstrap.css" rel="stylesheet">
 </head>
 <body>
   <main class="container">
     <div id="nombreArtista">
-        <?php echo strtoupper($data[0]['nombre']);?>
+        <?php //echo strtoupper($data[0]['nombre']);?>
     </div>
     <div id="datosArtista">
         <div class="col-12 col-md-6">
             <img src="../../img/img_artista/artistas/<?= str_replace(" ", "_", $data[0]['nombre']);?>.png">
         </div>
         <div class="col-12 col-md-6">
-            <?= $data[0]['informacion'];?>
+            <?php //$data[0]['informacion'];?>
         </div>
     </div>
     <div class="discos">
 
-        <?php foreach ($data['discos'] as $numeroDisco => $nombreDisco) { ?>
+        <?php 
+         foreach($data['discos'] as $claveDis => $valorDis){
+         ?>
             <table class="col-">
                 <caption>
-                    <?= strtoupper($data['discos'][$numeroDisco]['nombre']); ?>
+                    <?php echo strtoupper($valorDis['nombre'])."<br>"; 
+                   foreach($data['canciones'] as $clave => $valor){
+                   
+                        if($valorDis['id_disco'] == $valor['id_disco']){
+                            echo strtoupper( $valor['nombre'])."nombre<br>"; 
+                         }
+                   }
+        }
+                 
+                    
+                    ?>
                 </caption>        
                 <?php 
-                    $contador = 0;
-                    foreach ($data['discos'][$numeroDisco][$nombreDisco['id_disco']] as $id_cancion => $cancion) { ;
+                 
                 ?>                    
                 <tr>
                     <td>
-                        <?php echo ucfirst($cancion['nombre']); ?>
+                        
                     </td>
                     <td>
                         <button type="button">
-                            <img src="../../img/img_artista/mas.png">
+                           <!-- <img src="../../img/img_artista/mas.png">-->
                         </button>
                     </td>
                 </tr>
-                <?php } ?>
+                    <?php ?>
             </table>
-        <?php } ?>
+        <?php 
+        ?>
     </div>
   </main>
 
 </body>
 </html>
+
+<?php
+    
+
+
+?>
