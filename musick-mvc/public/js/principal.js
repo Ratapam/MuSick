@@ -29,7 +29,7 @@
 
     let iframe = document.getElementById('iframe');
 
-      iframe.src = '../php/home.php';
+      iframe.src = '/usuario/home/';
 
   }
 
@@ -37,7 +37,7 @@
 
     let iframe = document.getElementById('iframe');
 
-      iframe.src = 'perfil.php';
+      iframe.src = '/usuario/perfil/';
 
   }
 

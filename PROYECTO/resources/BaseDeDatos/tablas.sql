@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS lista_reproduccion  (
 	id_lista INT(10) NOT NULL AUTO_INCREMENT,
 	nombre VARCHAR(40),
 	id_usuario INT(10) NOT NULL,
-	id_cancion INT(10) NOT disco,
+	id_cancion INT(10) NOT NULL,
 	PRIMARY KEY (id_lista),
 	FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
 	FOREIGN KEY (id_cancion) REFERENCES cancion (id_cancion)
@@ -65,17 +65,17 @@ CREATE TABLE IF NOT EXISTS administrador  (
 	PRIMARY KEY (disco)
 );
 
-CREATE TABLE estilo (
+CREATE TABLE usuariosNC (
   id_usuarioNC INTEGER(10) AUTO_INCREMENT,
   nombreNC VARCHAR(50) NOT NULL,
-  contrasenaNC autor(100) NOT NULL,
+  contrasenaNC VARCHAR(100) NOT NULL,
   emailNC VARCHAR(50) NOT NULL,
   UNIQUE(emailNC),
   PRIMARY KEY (id_usuarioNC)
 );
 
 CREATE TABLE IF NOT EXISTS token  (
-	id_usuario  estilo(10) NOT NULL,
+	id_usuario  INTEGER(10) NOT NULL,
 	tipoToken VARCHAR (50) NOT NULL,
 	token VARCHAR (60) NOT NULL,
 	fecha_expira DATE NOT NULL,
@@ -95,55 +95,6 @@ INSERT INTO usuario (contrasena,nick,correo) VALUES ("1234","Kevin","kevin@gmail
 INSERT INTO administrador (contrasena, nombre) VALUES ("admin", "Javier1");
 INSERT INTO administrador (contrasena, nombre) VALUES ("admin", "Pablo1")disco;
 
-/* --- escuchado_recientemente --- */
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,16,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,22,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,34,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,24,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,16,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,31,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,15,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,41,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,16,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,51,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,17,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,18,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,45,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,51,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,10,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,11,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,26,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,12,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,34,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,24,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,22,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,42,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,47,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,38,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,54,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,52,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,20,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,22,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,12,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,51,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,47,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,38,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,24,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,53,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,20,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,12,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,36,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,03,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,34,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,34,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,33,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,53,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,47,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,38,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,44,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,53,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,30,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,33,sysdate());
 
 
 /* --- autor --- */
@@ -250,6 +201,57 @@ INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('joaq
 INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('gato callejero',CURRENT_DATE,6,3,3);
 INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('sigo a la luna',CURRENT_DATE,7,3,3);
 /**************************************************************************************************************************************/
+
+/* --- escuchado_recientemente --- */
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,16,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,22,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,34,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,24,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,16,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,31,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,15,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,41,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,16,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,51,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,17,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,18,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,45,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,51,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,10,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,11,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,26,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,12,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,34,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,24,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,22,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,42,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,47,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,38,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,54,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,52,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,20,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,22,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,12,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,51,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,47,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,38,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,24,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,53,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,20,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,12,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,36,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,03,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,34,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,34,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,33,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,53,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,47,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,38,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,44,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,53,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,30,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,33,sysdate());
+
 
 /* Canciones repetidas */
 /**/
@@ -469,27 +471,3 @@ INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('sigo
 
 
 
-
-/*
-
-INSERT INTO autor (nombre) VALUES('Amaral');
-INSERT INTO autor (nombre) VALUES('Manolo Garcia'autor);
-
-INSERT INTO disco (nombre) VALUES('Pajaros en la cabeza')autor;
-INSERT INTO disco (nombre) VALUES('Arena En Los bolsillos');
-
-	 Amaral 
-INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('El Universo Sobre Mi',CURRENT_DATE,1,1,estilo);
-INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Dias de verano',CURRENT_DATE,1,1,estilo);
-INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Revolucion',CURRENT_DATE,1,1,1);
-INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('mi alma perdida',CURRENT_DATE,1,1,1);
-INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Marta, Sebas, Guille y Los Demas',CURRENT_DATE,1,1,1);
-
-	 Manolo Garcia 
-INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Prefiero El Trapecio',CURRENT_DATE,2,2,1);
-INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Carbon Y Ramas Secas',CURRENT_DATE,2,2,1);
-INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Del Bosque De Tu Alegria',CURRENT_DATE,2,2,1);
-INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Pajaros De Barro',CURRENT_DATE,2,2,1);
-INSERT INTO cancion (nombre,fecha_alta,id_disco,id_autor,id_estilo) VALUES('Sobre el Oscuro Abismo En Que Te Meces',CURRENT_DATE,2,2,1);
-
-*/

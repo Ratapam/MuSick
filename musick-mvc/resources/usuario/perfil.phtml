@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/css/perfil.css" rel="stylesheet">
+	<title>Perfil</title>
+</head>
+<body>
+
+
+	<div class="container">
+		
+		<main class="row">
+
+			<div class=" col-12">
+				<h2>Perfil</h2>
+				<div class="datos-usu">
+					<img src="/img/usu.png">
+					
+					<?php foreach ($data as $clave => $valor) { ?> <h3><?= $clave.":</h3><p>".$valor; ?></p> <?php }?>
+
+				</div>
+			</div>
+
+		</main>
+		<aside class="row">
+			<div class="col-12">
+				<a href="../php/registrate.php"><button><p>EDITAR PERFIL</p></button>
+					<a>
+			</div>
+		</aside>
+		<!-- <footer class="row">
+			<div class="col-12">
+     			 <p>Copyright &copy; Musick 2019</p>
+		</footer> -->
+	</div>
+</body>
+</html>
