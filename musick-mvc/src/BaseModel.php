@@ -32,7 +32,7 @@ class BaseModel
         $nombre_clase = get_called_class();
         $nombre_tabla = strtolower(substr($nombre_clase,5));
         $campos_para_select = implode(",",static::$lista_info);
-        echo "Select $campos_para_select from $nombre_tabla";
+        // echo "Select $campos_para_select from $nombre_tabla";
         $resultado = $db -> ejecutar("Select $campos_para_select from $nombre_tabla");
         $resultado = array_map(function ($datos){
             $nombre_clase = get_called_class();

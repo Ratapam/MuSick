@@ -8,11 +8,11 @@ class ModelUsuario extends BaseModel{
         return"<h1>Hola</h1>";
     }
 
-    public function home(){
+    public function ultimasEscuchadas(){
 		$db = App::getDB();
         // $id_usuario = $_SESSION['id_usuario'];
         $id_usuario = 1;
-		$resultado = $db -> ejecutar("SELECT autor.nombre ,autor.id_autor FROM escuchado_recientemente, cancion, autor WHERE escuchado_recientemente.id_usuario = $id_usuario AND escuchado_recientemente.id_cancion = cancion.id_cancion AND cancion.id_autor = autor.id_autor");
+		$resultado = $db -> ejecutar("SELECT DISTINCT autor.nombre ,autor.id_autor FROM escuchado_recientemente, cancion, autor WHERE escuchado_recientemente.id_usuario = $id_usuario AND escuchado_recientemente.id_cancion = cancion.id_cancion AND cancion.id_autor = autor.id_autor LIMIT 4");
 		return $resultado;
 	}
 

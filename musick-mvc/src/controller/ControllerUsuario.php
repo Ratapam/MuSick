@@ -8,10 +8,10 @@ class ControllerUsuario extends BaseController{
     }
 
     function home(){
-
-        $this->data=  ModelUsuario::home();
+        $this -> data['ultimo_escuchado'] = ModelUsuario::ultimasEscuchadas();
+        $this -> data['estilo'] = ModelEstilo::cuatroEstilos();
+        $this -> data['recomendado'] = ModelEscuchadoRecientemente::masEscuchados();
      }
-
 
      function perfil(){
 

@@ -7,24 +7,51 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
   crossorigin="anonymous">
   <link href="/css/home.css" rel="stylesheet">
-  <link href="/css/minibootstrap.css" rel="stylesheet">
-  
+  <link href="/css/minibootstrap.css" rel="stylesheet">  
 </head>
 <body>
   <main class="container">
       <h1 class="my-4 text-center text-lg-left">
-      <?php //strtoupper(str_replace("_", " ", $dato));?>
+        ULTIMOS ARTISTAS ESCUCHADOS
       </h1>
       <div class="row text-center text-lg-left">
-        <?php foreach ($data as $artista) { ?>
+        <?php foreach ($data['ultimo_escuchado'] as $artista) { ?>
         <div class="col-sm-12 col-md-6 col-lg-3">
-        <a href="/../autor/presentacion/?id_autor=<?=$artista['id_autor']?>" class="d-block mb-4 h-100">
-       <!-- <a href="autor.php?id_autor=<?php echo str_replace(" ", "_", $artista['nombre']);?>" class="d-block mb-4 h-100">-->
+        <a href="/autor/presentacion/<?=$artista['id_autor']?>" class="d-block mb-4 h-100">
         <img class="embed-responsive-item" control
         src="/img/img_artista/artistas/<?php echo str_replace(" ", "_", $artista['nombre']);?>.png"/>
         </a>
         </div>
        <?php } ?>
+      </div>
+
+       <h1 class="my-4 text-center text-lg-left">
+        ESTILOS
+      </h1>
+       <div class="row text-center text-lg-left">
+        <?php foreach ($data['estilo'] as $estilo) { ?>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+        <a href="/autor/presentacion/<?=$estilo['id_autor']?>" class="d-block mb-4 h-100">
+        <img class="embed-responsive-item" control
+        src="/img/estilos/<?php echo str_replace(" ", "_", $estilo['nombre']);?>.png"/>
+        </a>
+        </div>
+       <?php } ?>
+      </div>
+
+      <h1 class="my-4 text-center text-lg-left">
+        RECOMENDADOS
+      </h1>
+      <div class="row text-center text-lg-left">
+        <?php foreach ($data['recomendado'] as $artista) { ?>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+        <a href="/autor/presentacion/<?=$artista['id_autor']?>" class="d-block mb-4 h-100">
+        <img class="embed-responsive-item" control
+        src="/img/img_artista/artistas/<?php echo str_replace(" ", "_", $artista['nombre']);?>.png"/>
+        </a>
+        </div>
+       <?php } ?>
+      </div>
       </div>
   </main>
 </body>

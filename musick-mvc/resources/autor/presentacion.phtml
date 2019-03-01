@@ -4,66 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Principal</title>
- <!-- <link href="/css/artista.css" rel="stylesheet"> -->
+  <link href="/css/artista.css" rel="stylesheet">
   <link href="/css/minibootstrap.css" rel="stylesheet">
 </head>
 <body>
   <main class="container">
     <div id="nombreArtista">
-        <?php //echo strtoupper($data[0]['nombre']);?>
+        <?php echo strtoupper($data['autor'][0]['nombre']);?>
     </div>
     <div id="datosArtista">
         <div class="col-12 col-md-6">
-            <img src="../../img/img_artista/artistas/<?= str_replace(" ", "_", $data[0]['nombre']);?>.png">
+            <img src="/img/img_artista/artistas/<?= str_replace(" ", "_", $data['autor'][0]['nombre']);?>.png">
         </div>
         <div class="col-12 col-md-6">
-            <?php //$data[0]['informacion'];?>
+            <?= $data['autor'][0]['informacion'];?>
         </div>
     </div>
     <div class="discos">
-
-        <?php 
-         foreach($data['discos'] as $claveDis => $valorDis){
-         ?>
+        <?php foreach($data['discos'] as $claveDisco => $valorDisco){ ?>
             <table class="col-">
                 <caption>
-                    <?php echo strtoupper($valorDis['nombre'])."<br>"; 
-                   foreach($data['canciones'] as $clave => $valor){
-                   
-                        if($valorDis['id_disco'] == $valor['id_disco']){
-                            echo strtoupper( $valor['nombre'])."nombre<br>"; 
-                         }
-                   }
-        }
-                 
-                    
-                    ?>
-                </caption>        
-                <?php 
-                 
-                ?>                    
-                <tr>
-                    <td>
-                        
-                    </td>
-                    <td>
-                        <button type="button">
-                           <!-- <img src="../../img/img_artista/mas.png">-->
-                        </button>
-                    </td>
-                </tr>
-                    <?php ?>
+                    <?= strtoupper($valorDisco['nombre']); ?>
+                </caption>
+                    <?php 
+                        foreach($data['canciones'] as $clave => $valor){ 
+                            if($valorDisco['id_disco'] == $valor['id_disco']){ ?>
+                                <tr>
+                                    <td>
+                                        <?= strtoupper( $valor['nombre'])."nombre<br>"; ?>
+                                    </td>
+                                    <td>
+                                        <button type="button">
+                                            <img src="/img/img_artista/mas.png">
+                                        </button>
+                                    </td>
+                                </tr>
+                      <?php }
+                        }
+        } ?>
             </table>
-        <?php 
-        ?>
     </div>
   </main>
-
 </body>
 </html>
-
-<?php
-    
-
-
-?>
