@@ -8,7 +8,7 @@ class ModelDisco extends BaseModel
     private $texto;
     private $fecha;*/
 
-    protected static $lista_info = ['id_disco','nombre']; 
+    protected static $lista_info = ['id_disco','nombre_disco']; 
 
 
     

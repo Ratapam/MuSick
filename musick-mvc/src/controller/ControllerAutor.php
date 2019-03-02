@@ -2,10 +2,6 @@
 
 class ControllerAutor extends BaseController{
 
-    function principal(){
-
-       $this->data=  ModelAutor::principal();
-    }
 
     function presentacion($id_autor){
 

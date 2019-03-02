@@ -45,7 +45,7 @@
 
      let iframe = document.getElementById('iframe');
 
-       iframe.src = '../php/biblioteca.php';
+       iframe.src = '/usuario/biblioteca/';
 
    }
 

@@ -10,16 +10,17 @@ class ModelUsuario extends BaseModel{
 
     public function ultimasEscuchadas(){
 		$db = App::getDB();
-        // $id_usuario = $_SESSION['id_usuario'];
-        $id_usuario = 1;
-		$resultado = $db -> ejecutar("SELECT DISTINCT autor.nombre ,autor.id_autor FROM escuchado_recientemente, cancion, autor WHERE escuchado_recientemente.id_usuario = $id_usuario AND escuchado_recientemente.id_cancion = cancion.id_cancion AND cancion.id_autor = autor.id_autor LIMIT 4");
+        
+		//$id_usuario = $_SESSION['usuario'];
+		$id_usuario = 1;
+		$resultado = $db -> ejecutar("SELECT DISTINCT autor.nombre_autor ,autor.id_autor FROM escuchado_recientemente, cancion, autor WHERE escuchado_recientemente.id_usuario = $id_usuario AND escuchado_recientemente.id_cancion = cancion.id_cancion AND cancion.id_autor = autor.id_autor LIMIT 4");
 		return $resultado;
 	}
 
 
 	public function perfil(){
 		$db = App::getDB();
-        // $id_usuario = $_SESSION['id_usuario'];
+        //$id_usuario = $_SESSION['usuario'];
         $id_usuario = 1;
 		$resultado = $db -> ejecutar("SELECT * FROM usuario WHERE id_usuario= $id_usuario");
 		return $resultado[0];
@@ -39,7 +40,7 @@ class ModelUsuario extends BaseModel{
 		$this -> nick = null;
 	}
 
-	public function saberUltimosArtistasEscuchados($id_usuario) {
+	/*public function saberUltimosArtistasEscuchados($id_usuario) {
 		$db = App::getDB();
 		$resultado = $db -> ejecutar("SELECT autor.nombre FROM escuchado_recientemente, cancion, autor WHERE escuchado_recientemente.id_usuario = $id_usuario AND escuchado_recientemente.id_cancion = cancion.id_cancion AND cancion.id_autor = autor.id_autor");
 		return $resultado;
@@ -67,7 +68,7 @@ class ModelUsuario extends BaseModel{
 
 	public function guardarCancionEnEscuchadoRecientemente() {}
 	
-	
+		*/
 }
 
 

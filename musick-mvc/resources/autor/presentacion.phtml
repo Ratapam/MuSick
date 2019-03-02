@@ -10,11 +10,11 @@
 <body>
   <main class="container">
     <div id="nombreArtista">
-        <?php echo strtoupper($data['autor'][0]['nombre']);?>
+        <?php echo strtoupper($data['autor'][0]['nombre_autor']);?>
     </div>
     <div id="datosArtista">
         <div class="col-12 col-md-6">
-            <img src="/img/img_artista/artistas/<?= str_replace(" ", "_", $data['autor'][0]['nombre']);?>.png">
+            <img src="/img/img_artista/artistas/<?= str_replace(" ", "_", $data['autor'][0]['nombre_autor']);?>.png">
         </div>
         <div class="col-12 col-md-6">
             <?= $data['autor'][0]['informacion'];?>
@@ -24,14 +24,14 @@
         <?php foreach($data['discos'] as $claveDisco => $valorDisco){ ?>
             <table class="col-">
                 <caption>
-                    <?= strtoupper($valorDisco['nombre']); ?>
+                    <?= strtoupper($valorDisco['nombre_disco']); ?>
                 </caption>
                     <?php 
                         foreach($data['canciones'] as $clave => $valor){ 
                             if($valorDisco['id_disco'] == $valor['id_disco']){ ?>
                                 <tr>
                                     <td>
-                                        <?= strtoupper( $valor['nombre'])."nombre<br>"; ?>
+                                        <?= strtoupper( $valor['nombre_cancion']); ?>
                                     </td>
                                     <td>
                                         <button type="button">

@@ -16,7 +16,14 @@ class ControllerUsuario extends BaseController{
      function perfil(){
 
       $this->data=  ModelUsuario::perfil();
-   }
+      }
+
+     function biblioteca(){
+
+      $this-> data =  ModelListaReproduccion::getCancionesLista();
+     }
+
+     
 
 }
 

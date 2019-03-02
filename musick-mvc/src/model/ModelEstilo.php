@@ -1,7 +1,7 @@
 <?php
 
 class ModelEstilo extends BaseModel{
-    protected static $lista_info = ['id_estilo','nombre']; 
+    protected static $lista_info = ['id_estilo','nombre_estilo']; 
 
 
     public function cuatroEstilos(){

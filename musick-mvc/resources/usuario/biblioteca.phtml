@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/artista.css" rel="stylesheet">
+  <link href="/css/minibootstrap.css" rel="stylesheet">
+    <script src="main.js"></script>
+</head>
+<body>
+  <div class="discos">
+        
+            <table class="col-">
+                <caption>
+                    LISTA DE REPRODUCCION
+                </caption>
+                    <?php 
+                        foreach($data as $clave => $valor){ 
+                                ?>
+                                <tr>
+                                <?php
+                                foreach($valor as $key => $value){ 
+                                ?>
+                                    <td>
+                                        <?= strtoupper($value); ?>
+                                    </td>
+                                <?php } ?>
+                                    <td>
+                                        <button id="play" type="button">
+                                            <img src="/img/imgReproductor/play.png">
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button id="play" type="button">
+                                            <img src="/img/papelera.png">
+                                        </button>
+                                    </td>
+                                </tr>
+                      <?php }
+                        
+                       ?>
+            </table>
+    </div>
+    
+</body>
+</html>
