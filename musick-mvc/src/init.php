@@ -15,7 +15,9 @@ spl_autoload_register(function ($nombre_clase) {
 		// Si comienza por Model
 		// 		/src/model/<nombre>
 		$ruta_a_clase .= "model".DS.$nombre_clase;
-	} else {
+	}  else if (startsWith($nombre_clase, "Field")) {
+		$ruta_a_clase .= "field" . DS . $nombre_clase;
+	}else {
 		// Si no
 		// 		/src/<nombre>
 		$ruta_a_clase .= $nombre_clase;

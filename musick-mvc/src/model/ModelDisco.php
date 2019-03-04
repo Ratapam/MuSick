@@ -23,6 +23,16 @@ class ModelDisco extends BaseModel
         return $resultado;
     }
 
+    public static function nombresDiscos() {
+
+        $db = App::getDB();
+        $sentenciaSQL = "SELECT nombre_disco FROM disco ";
+        $resultado = $db -> ejecutar($sentenciaSQL,$params);
+    
+        return $resultado;
+    }
+
+
 }
 
 ?>

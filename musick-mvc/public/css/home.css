@@ -1,7 +1,8 @@
 body {
 	padding-top: 6em;
 	padding-bottom: 6em;
-	background-color: #20244b;
+	/*background-color: #20244b;*/
+	background-image: linear-gradient(90deg, #cf1b3ffb 10%, #be4131 90%);
 	background-size: auto;
 	color: white;
 }

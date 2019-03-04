@@ -10,7 +10,17 @@ class ModelEstilo extends BaseModel{
         $id_usuario = 1;
 		$resultado = $db -> ejecutar("SELECT * FROM estilo LIMIT 4");
 		return $resultado;
-	}
+    }
+    
+    public static function nombresEstilos() {
+
+        $db = App::getDB();
+        $sentenciaSQL = "SELECT nombre_estilo FROM estilo ";
+        $resultado = $db -> ejecutar($sentenciaSQL,$params);
+    
+        return $resultado;
+    }
+
 
 
 

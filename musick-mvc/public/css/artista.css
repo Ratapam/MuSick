@@ -3,6 +3,7 @@ body {
   /* background-color: #20244b; */
   background-size: auto;
   margin: 0 10%;
+ 
 }
 
 #nombreArtista {
@@ -80,7 +81,8 @@ tr > td > button > img {
   max-width: 1em;
 }
 
-
-table:last-of-type {
-  margin-bottom: 5em;
+body:last-child{
+  border-bottom: 5em solid transparent;
 }
+
+

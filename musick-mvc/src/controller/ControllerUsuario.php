@@ -19,8 +19,9 @@ class ControllerUsuario extends BaseController{
       }
 
      function biblioteca(){
-
-      $this-> data =  ModelListaReproduccion::getCancionesLista();
+      //$this-> data['css'] = "<link href='/css/artista.css' rel='stylesheet'>"; 
+      $this-> data['lista'] =  ModelListaReproduccion::getCancionesLista();
+      $this-> data['css'] = "<link href='/css/artista.css' rel='stylesheet'>"; 
      }
 
      

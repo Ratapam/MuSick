@@ -31,8 +31,11 @@ class DB {
         try {
            
             $sentenciaSQL = $this -> connection -> prepare($sql);
-            // print_r($params);
-            // echo "ejecutar";
+            echo "<pre>";
+            print_r($sql);
+            print_r($params);
+            echo "</pre>";
+           // die();
             $sentenciaEjecutada = $sentenciaSQL -> execute($params);
             if (!$sentenciaEjecutada) {
                 print_r( $this -> connection -> errorInfo());

@@ -18,10 +18,11 @@ class BaseModel
     public function __construct($data_row=[]) {
         $this -> db = App::getDB();
         //$this -> lista_info = ['id','texto','descripcion','fecha'];
-        print_r($data_row);
+      //  print_r($data_row);
         if(count($data_row)==0){
             $this -> data= array_fill_keys(static::$lista_info,null);
         }else{
+           
             $this -> data = array_combine(static::$lista_info,$data_row);
         }
     }
@@ -44,6 +45,7 @@ class BaseModel
     public function __call($nombre,$dato){
         $dato_pedido = strtolower(substr($nombre,3));
         $accion = substr($nombre,0,3);
+        
         if(!$this->estaEnlalistaDatos($dato_pedido)){            
             return "Error";
         }else{
@@ -69,14 +71,14 @@ class BaseModel
 
 
 
-    public function save() {
+   /* public function save() {
         $db = App::getDB();
         $nombre_clase = get_called_class();
         $nombre_tabla = strtolower(substr($nombre_clase,5));
         $campos_para_insert = implode(",",array_slice(static::$lista_info,1));
         $parametros_para_insert = implode(",",array_fill(0,count(static::$lista_info)-1,'?'));
         echo $parametros_para_insert."91\n";
-        $id = $this -> data['id'];
+       // $id = $this -> data['id_autor'];
         $claves= array_keys($this-> data);
         $parametros_para_update="";
         for($i = 0;$i<count($claves);$i++){
@@ -86,26 +88,56 @@ class BaseModel
                 $parametros_para_update .= $claves[$i]."=? ";
             }
         }
-        if ($this -> getById($id) == null) {
-            $sqlInsert = "INSERT INTO $nombre_tabla ($campos_para_insert) VALUES (?, ?, ?)";
+        if ($this -> getId() == "") {
+            $sqlInsert = "INSERT INTO $nombre_tabla ($campos_para_insert) VALUES ($parametros_para_insert)";
             
             $resultado = $this -> db -> ejecutar($sqlInsert, ...array_values(array_slice($this->data,1)));
             print_r($resultado);
             echo "rsultado insert";
-            /*if(is_array($resultado)){
+            if(is_array($resultado)){
                 $this -> setId($this ->db -> getLastId());
                 $resultado[] = $this -> getId();
-            }*/
+            }
             return $resultado;
         }else{
-            /*$this -> db -> ejecutar('UPDATE noticias SET titulo = ?, texto = ?, fecha = ? WHERE id = ?', $this -> titulo, $this -> texto, $this -> fecha, $this -> id);*/
+           
             $sqlUpdate =  "UPDATE $nombre_tabla SET $parametros_para_update where id = $id";
             $resultado = $this -> db -> ejecutar($sqlUpdate, ...array_values($this->data));
-            /*if(is_array($resultado)){
+            if(is_array($resultado)){
               $resultado[] = $this ->getId();
-             }*/
+             }
              return $resultado;
          }
+    }*/
+
+    public function save() {
+
+        $db = App::getDB();
+
+        $nombre_clase = get_called_class();
+        $nombre_tabla = strtolower(substr($nombre_clase, 5));
+        $campos_insert = implode(', ', array_slice(static::$lista_info, 1));
+        $campos_update = implode(' = ?, ', array_slice(static::$lista_info, 1)) . ' = ?';
+        $parametros_insert = implode(', ', array_fill(0, count(static::$lista_info) - 1, '?'));
+        
+       
+        $nombreId = "getId_".$nombre_tabla;
+        if ($this->$nombreId() == null) {
+            $sql_insert = "INSERT INTO $nombre_tabla ($campos_insert) VALUES ($parametros_insert)";
+        
+            $resultado = $this->db->ejecutar($sql_insert, ...array_values(array_slice($this->data, 1)));
+            if (is_array($resultado)) {
+                $this->setId($this->db->getLastId());
+                $resultado[] = $this->getId();
+            }
+           
+           return $resultado;
+        } else {
+            $id_update = $this->getId();
+            $sql_insert = "UPDATE $nombre_tabla SET $campos_update WHERE id = $id_update";
+            $resultado = $this->db->ejecutar($sql_insert, ...array_values(array_slice($this->data, 1)));
+            return $resultado;
+        }
     }
 
 }

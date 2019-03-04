@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/css/artista.css" rel="stylesheet">
-  <link href="/css/minibootstrap.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <?=$data['css']?>
+ 
     <script src="main.js"></script>
 </head>
 <body>
@@ -16,7 +16,7 @@
                     LISTA DE REPRODUCCION
                 </caption>
                     <?php 
-                        foreach($data as $clave => $valor){ 
+                        foreach($data['lista'] as $clave => $valor){ 
                                 ?>
                                 <tr>
                                 <?php
