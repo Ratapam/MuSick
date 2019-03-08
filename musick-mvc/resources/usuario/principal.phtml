@@ -51,6 +51,13 @@ if(isset($_SESSION['logeado'])){
           <img src="/img/imgReproductor/library.png">
         </a>
       </button>
+        <script>
+          var lista = [
+          <?php echo "'ruta/a/cancion1'," ?>
+          <?php echo "'ruta/a/cancion2'" ?>
+          ];
+          alert(lista[1]);
+        </script>
       <audio controls >
         <source src="/musica/cancion1.mp3" type="audio/ogg">
       </audio> 
