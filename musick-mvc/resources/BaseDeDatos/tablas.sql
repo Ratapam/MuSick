@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS escuchado_recientemente (
 	id_usuario INT(10) NOT NULL,
 	id_cancion INT(10) NOT NULL,
 	fecha DATE NOT NULL,
-	PRIMARY KEY (id_escucha),
+	PRIMARY KEY (id_escuchado_recientemente),
 	FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
 	FOREIGN KEY (id_cancion) REFERENCES cancion (id_cancion)
 );
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS lista_reproduccion  (
 	id_lista_reproduccion INT(10) NOT NULL AUTO_INCREMENT,
 	id_usuario INT(10) NOT NULL,
 	id_cancion INT(10) NOT NULL,
-	PRIMARY KEY (id_lista),
+	PRIMARY KEY (id_lista_reproduccion),
 	FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
 	FOREIGN KEY (id_cancion) REFERENCES cancion (id_cancion)
 );

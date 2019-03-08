@@ -38,6 +38,7 @@ class DB {
            // die();
             $sentenciaEjecutada = $sentenciaSQL -> execute($params);
             if (!$sentenciaEjecutada) {
+                print_r( $sentenciaSQL -> errorInfo());
                 print_r( $this -> connection -> errorInfo());
                 return null;
             } else {
