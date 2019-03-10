@@ -106,7 +106,9 @@ class BaseForm
             echo "<br>";
            
         }
-        echo "<input type='submit' />";
+        echo "<div class='grupo contenedor_boton'>
+        <input type='submit' name='enviar' value='Enviar' class='boton'>
+    </div>";
         echo "</form>";
 
         return ob_get_clean();

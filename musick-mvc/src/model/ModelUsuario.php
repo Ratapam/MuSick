@@ -36,9 +36,17 @@ class ModelUsuario extends BaseModel{
 		return $resultado;
 	}
 
+	
+
 	public function __destruct() {
 		$this -> nick = null;
 	}
+
+	public static function generateToken($length = 30)
+    {
+        return bin2hex(random_bytes($length));
+        
+    }//generateToken
 
 	/*public function saberUltimosArtistasEscuchados($id_usuario) {
 		$db = App::getDB();

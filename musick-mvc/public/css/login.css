@@ -13,42 +13,25 @@ font-family: 'Numans', sans-serif;
 .container{
 height: 100%;
 align-content: center;
+display: flex;
+flex-direction: column;
+
 }
 
 .card{
-height: 370px;
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
+margin-top: 100px!important;
+padding: 20px;
+width: 50%;
+margin:0 auto;
 background-color: rgba(0,0,0,0.5) !important;
 }
 
-.social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFAA30;
-}
 
-.social_icon span:hover{
-color: white;
-cursor: pointer;
-}
 
-.card-header h3{
-color: white;
-}
+label{
+width: 100px;
+color: rgb(144, 229, 200);
 
-.social_icon{
-position: absolute;
-right: 20px;
-top: -45px;
-}
-
-.input-group-prepend span{
-width: 50px;
-background-color: rgb(144, 229, 200);
-color: black;
-border:0 !important;
 }
 
 input:focus{
@@ -62,23 +45,26 @@ color: white;
 }
 
 .enlaces{
+	max-width: 20%;
 	color: rgb(144, 229, 200);
+	border:solid 3px rgba(0,0,0,0.5) ;
+	width: 50%;
+	margin:0 auto;
+	margin-top: 10px;
+	padding: 5px 20px;
+	background-color: rgba(0,0,0,0.5) !important;
 }
 
 .enlaces:hover{
-	color: rgb(144, 229, 200);
+	color:#FFAA30;
 }
 
 .iconos{
 	max-width: 100%;
 }
 
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
+input[type*=checked]{
+	color:blue;
 }
 
 .login_btn{

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+
+	  <meta charset="UTF-8">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+<body>
+	<?php
+
+	if(isset($_COOKIE['session'])) {
+		App::getRouter()->redirect('/usuario/compruebaCookie/');
+	}
+	?>
+<div class="container">
+	<div class="card">
+		<?=$data['form']?>
+	</div>
+	<a href="/usuario/registrate" class="enlaces remember">Registrate</a>
+</div>
+
+
+</div>
+</body>
+</html>

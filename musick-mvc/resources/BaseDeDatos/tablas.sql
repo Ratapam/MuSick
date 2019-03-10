@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS usuario (
 	id_usuario  INT(10) NOT NULL AUTO_INCREMENT,
-	contrasena  VARCHAR(100) NOT NULL,
 	nick  VARCHAR(50) NOT NULL,
+	contrasena  VARCHAR(100) NOT NULL,	
 	correo VARCHAR(50) NOT NULL,
 	PRIMARY KEY (id_usuario, contrasena)
 );
@@ -81,14 +81,20 @@ CREATE TABLE IF NOT EXISTS token  (
 	PRIMARY KEY (id_usuario)
 );
 
+CREATE TABLE IF NOT EXISTS recuerdame (
+	id_usuario INT(10) NOT NULL,
+	token VARCHAR(60) NOT NULL,
+	PRIMARY KEY (id_usuario)
+);
+
 
 
 /*********************************************************/
 
-/* --- usuario --- */
+/* --- usuario ---
 INSERT INTO usuario (contrasena,nick,correo) VALUES ("1234","Javier","moyano_07@hotmail.com");
 INSERT INTO usuario (contrasena,nick,correo) VALUES ("1234","Pablo","ratapam@gmail.com");
-INSERT INTO usuario (contrasena,nick,correo) VALUES ("1234","Kevin","kevin@gmail.com");
+INSERT INTO usuario (contrasena,nick,correo) VALUES ("1234","Kevin","kevin@gmail.com"); */
 
 /* --- Administradores --- */
 INSERT INTO administrador (contrasena, nombre) VALUES ("admin", "Javier1");
