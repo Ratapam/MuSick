@@ -40,8 +40,7 @@ class ModelUsuarioForm extends BaseForm
         
         $sql_insert= "INSERT INTO usuario (nombre,contrasena,tokenLogueado) VALUES (?, ?, ?)";
         $resultado = $db -> ejecutar($sql_insert,$nombre,$pass,$token);
-        print_r($resultado);
-        die();
+       
         
     }
 
@@ -67,7 +66,7 @@ class ModelUsuarioForm extends BaseForm
         
                 
         $resultado = $db -> ejecutar($sentenciaSQL,$id,$token);
-        print_r($resultado);
+        
        
         if(count($resultado)>0){
             return true;

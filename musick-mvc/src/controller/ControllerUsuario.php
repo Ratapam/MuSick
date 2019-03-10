@@ -4,7 +4,8 @@ class ControllerUsuario extends BaseController{
 
     function principal(){
 
-       $this->data=  ModelUsuario::principal();
+       $this->data['lista'] =  ModelUsuario::lista();
+      
     }
 
     function home(){

@@ -205,7 +205,13 @@ INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALU
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('joaquin carachapa y la pequena nube',CURRENT_DATE,6,3,3);
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('gato callejero',CURRENT_DATE,6,3,3);
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('sigo a la luna',CURRENT_DATE,7,3,3);
-/**************************************************************************************************************************************/
+
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('extra',CURRENT_DATE,7,3,3);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('el aire de la calle',CURRENT_DATE,7,3,3);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('el aire de la calle',CURRENT_DATE,7,3,3);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('chacho',CURRENT_DATE,7,2,3);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('oye compai',CURRENT_DATE,7,2,3);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('por bule',CURRENT_DATE,7,2,3);/**************************************************************************************************************************************/
 
 /* --- escuchado_recientemente --- */
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(1,16,sysdate());
@@ -260,6 +266,7 @@ INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,33,
 
 /*Insert Lista de reproduccion*/
 
+/*
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (1,55);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (1,25);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (1,35);
@@ -286,4 +293,38 @@ INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,55);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,63);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,53);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,23);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,35);*/
+
+
+
+
+
+
+
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (1,1);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (1,63);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (1,2);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (1,3);
+
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,1);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,63);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,3);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,2);
+
+
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,1);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,2);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,3);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,63);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,52);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,63);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,53);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,23);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (3,35);
+
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,64);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,65);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,66);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,67);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,68);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,69);

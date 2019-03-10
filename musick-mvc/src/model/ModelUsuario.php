@@ -4,8 +4,18 @@ class ModelUsuario extends BaseModel{
     protected static $lista_info = ['id_usuario','contrasena','nick','correo']; 
 
 
-    function principal(){
-        return"<h1>Hola</h1>";
+    function lista(){
+        $db = App::getDB();
+		$id_usuario = $_SESSION['usuario'];
+	
+        $sentenciaSQL = "SELECT cancion.nombre_cancion, autor.nombre_autor,disco.nombre_disco FROM cancion ,autor ,disco ,lista_reproduccion  WHERE lista_reproduccion.id_cancion = cancion.id_cancion AND cancion.id_autor = autor.id_autor AND disco.id_disco = cancion.id_disco AND lista_reproduccion.id_usuario = ?";
+		$params = $id_usuario;
+		
+ 
+		$resultado = $db -> ejecutar($sentenciaSQL,$params);
+		
+
+        return $resultado;
     }
 
     public function ultimasEscuchadas(){

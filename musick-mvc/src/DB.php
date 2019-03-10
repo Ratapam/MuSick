@@ -31,15 +31,10 @@ class DB {
         try {
            
             $sentenciaSQL = $this -> connection -> prepare($sql);
-            echo "<pre>";
-            print_r($sql);
-            print_r($params);
-            echo "</pre>";
-           // die();
+           
             $sentenciaEjecutada = $sentenciaSQL -> execute($params);
             if (!$sentenciaEjecutada) {
-                print_r( $sentenciaSQL -> errorInfo());
-                print_r( $this -> connection -> errorInfo());
+               
                 return null;
             } else {
                 $resultado = $sentenciaSQL -> fetchAll(PDO::FETCH_ASSOC);
