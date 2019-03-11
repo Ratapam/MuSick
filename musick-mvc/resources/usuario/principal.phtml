@@ -41,8 +41,8 @@
         </a>
       </button>
   
-      <audio controls onended="cambiarCancion()">
-        <source src="" type="audio/ogg" id="audio">
+      <audio controls onended="cambiarCancion()" id="audioControl">
+        <source src="" type="audio/mp3" id="audio">
       </audio> 
     </div>
   </footer>
@@ -77,17 +77,22 @@
         
           ];
          // palabrasJuego.push(palabrasJuego.shift())
-          let contador= 0;
-          let audio = document.getElementById('audio');
-          audio.src = lista[contador];
+         let contador= 0;
+          let control = document.getElementById('audioControl');
+          control.src = lista[contador];
+          control.load();
+
           
           function cambiarCancion(){
             contador++;
-            audio.src = lista[contador];
-            audio.play = true;
+            control.src = lista[contador];
+            control.load();
+            control.play();
             if(contador == lista.length){
               contador = 0;
             }
+          
+          
           }
           
        

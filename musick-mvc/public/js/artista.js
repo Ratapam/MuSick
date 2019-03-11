@@ -11,4 +11,10 @@ window.addEventListener('DOMContentLoaded', function(){
 		document.getElementById('img').style.width = "100%"
 	});
 
+	document.getElementById('img').addEventListener('click', function(e){
+	   let tdConenedor = e.target.parentNode;
+	   let nombreCancion = tdConenedor.previousSibling.innerText;
+	   console.log(nombreCancion);
+	});
+    
 });
