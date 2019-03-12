@@ -96,6 +96,7 @@ INSERT INTO usuario (contrasena,nick,correo) VALUES ("$argon2i$v=19$m=1024,t=2,p
 INSERT INTO usuario (contrasena,nick,correo) VALUES ("$argon2i$v=19$m=1024,t=2,p=2$Wi94eW5tcS5PQmE4aUhOTw$62BsoF2CtaBkBdMHXpj5GwlDtCd4EFiYkbiOUbsc0nA","Pablo","ratapam@gmail.com");
 INSERT INTO usuario (contrasena,nick,correo) VALUES ("$argon2i$v=19$m=1024,t=2,p=2$Wi94eW5tcS5PQmE4aUhOTw$62BsoF2CtaBkBdMHXpj5GwlDtCd4EFiYkbiOUbsc0nA","Kevin","kevin@gmail.com"); 
 INSERT INTO usuario (contrasena,nick,correo) VALUES ("$argon2i$v=19$m=1024,t=2,p=2$Wi94eW5tcS5PQmE4aUhOTw$62BsoF2CtaBkBdMHXpj5GwlDtCd4EFiYkbiOUbsc0nA","Guillen","guillen@gmail.com"); 
+INSERT INTO usuario (contrasena,nick,correo) VALUES ("$argon2i$v=19$m=1024,t=2,p=2$Wi94eW5tcS5PQmE4aUhOTw$62BsoF2CtaBkBdMHXpj5GwlDtCd4EFiYkbiOUbsc0nA","Victor","victor@gmail.com"); 
 
 /* --- Administradores --- */
 INSERT INTO administrador (contrasena, nombre) VALUES ("admin", "Javier1");
@@ -105,11 +106,24 @@ INSERT INTO administrador (contrasena, nombre) VALUES ("admin", "Pablo1");
 
 /* --- autor --- */
 INSERT INTO autor (nombre_autor, informacion) VALUES('camaron','Fue un cantaor gitano español considerado una de las principales figuras del flamenco.');
-INSERT INTO autor (nombre_autor, informacion) VALUES('la excepcion', "La excepción que confirma la regla, fue un grupo español de rap originario del barrio de Pan Bendito, en el distrito de Carabanchel, Madrid. Estuvo compuesto por los MC's El Langui y Gitano Antón  y por el DJ La Dako Style . ");
+INSERT INTO autor (nombre_autor, informacion) VALUES('la excepcion', "La excepcion que confirma la regla, fue un grupo carabanchelero de rap originario del barrio de Pan Bendito, en el distrito de Carabanchel, Madrid. Estuvo compuesto por los MC's El Langui y Gitano Anton  y por el DJ La Dako Style . ");
 INSERT INTO autor (nombre_autor, informacion) VALUES('los delinquentes', 'Los Delinqüentes fue un grupo musical andaluz, originario de Jerez de la Frontera (Cádiz), formado en 1998 por Miguel Ángel Benítez Gómez "Er Migue" y Marcos del Ojo "Er Canijo de Jeré", a los que se uniría posteriormente Diego Pozo "Er Ratón".');
 
 INSERT INTO autor (nombre_autor, informacion) VALUES('def con dos', 'Def Con Dos es un grupo  formado en Vigo en 1988, aunque afincando en Madrid desde poco tiempo después. Fueron pioneros en practicar la música hip hop en español, posteriormente evolucionaron hacia el rap metal.');
 INSERT INTO autor (nombre_autor, informacion) VALUES('system of a down', 'System of a Down es una banda de rock estadounidense de ascendencia armenia, formada en Los Ángeles, California, en el año 1994. Está compuesta por Serj Tankian, Daron Malakian, Shavo Odadjian y John Dolmayan..');
+
+
+INSERT INTO autor (nombre_autor, informacion) VALUES('camela', 'Def Con Dos es un grupo  formado en Vigo en 1988, aunque afincando en Madrid desde poco tiempo después. Fueron pioneros en practicar la música hip hop en español, posteriormente evolucionaron hacia el rap metal.');
+INSERT INTO autor (nombre_autor, informacion) VALUES('green day', 'Def Con Dos es un grupo  formado en Vigo en 1988, aunque afincando en Madrid desde poco tiempo después. Fueron pioneros en practicar la música hip hop en español, posteriormente evolucionaron hacia el rap metal.');
+INSERT INTO autor (nombre_autor, informacion) VALUES('laura_pausini', 'Def Con Dos es un grupo  formado en Vigo en 1988, aunque afincando en Madrid desde poco tiempo después. Fueron pioneros en practicar la música hip hop en español, posteriormente evolucionaron hacia el rap metal.');
+INSERT INTO autor (nombre_autor, informacion) VALUES('melendi', 'Def Con Dos es un grupo  formado en Vigo en 1988, aunque afincando en Madrid desde poco tiempo después. Fueron pioneros en practicar la música hip hop en español, posteriormente evolucionaron hacia el rap metal.');
+INSERT INTO autor (nombre_autor, informacion) VALUES('michael jackson', 'Def Con Dos es un grupo  formado en Vigo en 1988, aunque afincando en Madrid desde poco tiempo después. Fueron pioneros en practicar la música hip hop en español, posteriormente evolucionaron hacia el rap metal.');
+INSERT INTO autor (nombre_autor, informacion) VALUES('ramones', 'Def Con Dos es un grupo  formado en Vigo en 1988, aunque afincando en Madrid desde poco tiempo después. Fueron pioneros en practicar la música hip hop en español, posteriormente evolucionaron hacia el rap metal.');
+INSERT INTO autor (nombre_autor, informacion) VALUES('rolling_stones', 'Def Con Dos es un grupo  formado en Vigo en 1988, aunque afincando en Madrid desde poco tiempo después. Fueron pioneros en practicar la música hip hop en español, posteriormente evolucionaron hacia el rap metal.');
+INSERT INTO autor (nombre_autor, informacion) VALUES('the_beatles', 'Def Con Dos es un grupo  formado en Vigo en 1988, aunque afincando en Madrid desde poco tiempo después. Fueron pioneros en practicar la música hip hop en español, posteriormente evolucionaron hacia el rap metal.');
+INSERT INTO autor (nombre_autor, informacion) VALUES('the_clash', 'Def Con Dos es un grupo  formado en Vigo en 1988, aunque afincando en Madrid desde poco tiempo después. Fueron pioneros en practicar la música hip hop en español, posteriormente evolucionaron hacia el rap metal.');
+
+
 
 /**************************************************************************************************************************************/
 /* Autores repetidos */
@@ -141,6 +155,15 @@ INSERT INTO disco (nombre_disco) VALUES('extras');
 INSERT INTO disco (nombre_disco) VALUES('armas pal pueblo');
 /* system of a down */
 INSERT INTO disco (nombre_disco) VALUES('toxicity');
+/* relleno */
+INSERT INTO disco (nombre_disco) VALUES('disco 1');
+INSERT INTO disco (nombre_disco) VALUES('disco 2');
+INSERT INTO disco (nombre_disco) VALUES('disco 3');
+INSERT INTO disco (nombre_disco) VALUES('disco 4');
+INSERT INTO disco (nombre_disco) VALUES('disco 5');
+INSERT INTO disco (nombre_disco) VALUES('disco 6');
+INSERT INTO disco (nombre_disco) VALUES('disco 7');
+INSERT INTO disco (nombre_disco) VALUES('disco 8');
 
 /* --- estilo --- */
 INSERT INTO estilo (nombre_estilo) VALUES('flamenco');
@@ -175,6 +198,18 @@ INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALU
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('needles',CURRENT_DATE,9,5,5);
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('deer dance',CURRENT_DATE,9,5,5);
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('jet pilot',CURRENT_DATE,9,5,5);
+
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('cancion 1',CURRENT_DATE,10,6,5);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('cancion 2',CURRENT_DATE,11,7,5);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('cancion 3',CURRENT_DATE,12,8,5);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('cancion 4',CURRENT_DATE,13,9,5);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('cancion 5',CURRENT_DATE,14,10,5);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('cancion 6',CURRENT_DATE,15,11,5);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('cancion 7',CURRENT_DATE,16,12,5);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('cancion 8',CURRENT_DATE,17,13,5);
+
+
+
 /*  -------  */
 
 
@@ -318,14 +353,10 @@ INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,17,
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,18,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,19,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,20,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,4,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,5,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,6,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,7,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,8,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,1,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,2,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,3,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,9,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,10,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(2,14,sysdate());
@@ -360,13 +391,9 @@ INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,20,
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,19,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,20,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,15,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,1,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,2,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,6,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,16,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,17,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,3,sysdate());
-INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,4,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,9,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,10,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,11,sysdate());
@@ -377,6 +404,16 @@ INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,8,s
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,13,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,14,sysdate());
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,18,sysdate());
+
+
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(5,21,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(5,22,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(5,23,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(5,24,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(5,25,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(5,26,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(5,27,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(5,28,sysdate());
 
 /*Insert Lista de reproduccion*/
 
@@ -462,10 +499,6 @@ INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,13);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,18);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,19);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,20);
-INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,1);
-INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,2);
-INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,3);
-INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,4);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,14);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,15);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (2,16);
@@ -500,15 +533,11 @@ INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,6);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,16);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,18);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,7);
-INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,3);
-INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,4);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,5);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,8);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,11);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,12);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,9);
-INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,1);
-INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,2);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,14);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,15);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,19);
@@ -516,3 +545,6 @@ INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,10);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,13);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,17);
 INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (4,20);
+
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (5,18);
+INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (5,12);
