@@ -13,7 +13,8 @@ class FieldCorreo extends BaseField
 
     public function pintar() {
 
-        echo "Correo Electronico: <input type='email' name='correo'>";
+        echo "<label>Correo: </label>";
+        echo "<input type='email' name='correo'>";
         
         if($this->error){
             echo "$this->error";

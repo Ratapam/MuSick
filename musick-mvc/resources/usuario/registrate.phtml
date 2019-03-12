@@ -6,6 +6,45 @@
 	
 	<link rel="stylesheet" type="text/css" href="/css/registrate.css">
 	<title>Registrate</title>
+	<style>
+		form{
+		
+			display:flex;
+			flex-direction:column;
+		}
+		input{
+			width:250px;
+			margin-top:10px;
+		}
+		input[type="submit"]{
+			margin-top:40px;
+			margin-right:70px;
+			width:120px;
+		}
+
+		a{
+			text-decoration:none;
+			color:white;
+		}
+		label{
+			margin-top:10px;
+			color:white;
+		}
+
+		label:first-of-type{
+			margin-left:px;
+		}
+
+		input:first-of-type{
+			margin-left:50px;
+		}
+
+		input[type="email"]{
+			margin-left:50px;
+			
+		}
+
+	</style>
 	</head>
 	<body>
     <div class="contenedor">
@@ -13,14 +52,15 @@
 			<div class="cabecera">
 				<h3>Regístrate</h3>
 			</div>
-				<form action="#" method="POST" class="formulario">
+				
 					
 					<div class="grupo">
 					       <?=$data['form']?>
-					</div>					
+					</div>
+					<div>				
 					
 					
-				</form>
+			<a href="/usuario/login" id="enlace">Volver a Login</a>	
 		</div>
 	</body>
 	</html>

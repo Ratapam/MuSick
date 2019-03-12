@@ -7,6 +7,9 @@
   <title>Principal</title>
   <link href="/css/principal.css" rel="stylesheet">
   <style>
+    .buscar{
+      opacity:0;
+    }
     .control{
       margin: 10px 10px;
     }
@@ -31,7 +34,7 @@
           <img src="/img/logoNuevo.png">
         </span>
       </div>
-      <div>
+      <div class="buscar">
         <input type="text" onkeypress= "if(event.keyCode == 13) cambiarIframe4()"  placeholder="Buscar..." autofocus />
       </div>
       <div>

@@ -2,7 +2,9 @@
 
 class ControllerAdministrador extends BaseController
 {
-  
+    public function opciones(){
+        $this -> data = ModelAdministrador::principal();
+    }
   
     public function addAutor(){
         $form = new ModelAutorForm($_POST);

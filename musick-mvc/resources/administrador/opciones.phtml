@@ -7,7 +7,7 @@ function presentacion() {
 	Bienvenido administrador.
 	</br>¿Qué quieres hacer?
 	</p>
-	<form action="administrador.php" method="get">
+	<form action="/administrador/addCancion/" method="get">
 	<input type="submit" value="Borrar Usuario" name="borrarUsuario"></input>
 	<input type="submit" value="Subir Cancion" name="subirCancion"></input>
 	<input type="submit" value="Crear Disco" name="crearDisco"></input>
@@ -35,7 +35,7 @@ function pantallaBorrarUsuario() {
 
 function pantallaSubirCancion() {
 	// HACER UN SELECT CON LOS DISCOS / AUTORES / ESTILOS DISPONIBLES
-	echo '
+	/*echo '
 	<div>
 	<p>
 	Subir canción:
@@ -55,7 +55,8 @@ function pantallaSubirCancion() {
 	<input type="submit" value="Subir Canción" name="subir"></input>
 	</form>
 	</div>
-	';
+	';*/
+	header('location:/administrador/addCancion');
 }
 
 function pantallaCrearDisco() {
