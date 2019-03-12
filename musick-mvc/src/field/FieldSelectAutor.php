@@ -9,7 +9,7 @@ class FieldSelectAutor extends BaseField
         $objeto = new ModelAutor();
         $nombres = $objeto -> getAll();
 
-        echo "$this->nombre :";
+        echo "<label>$this->nombre :</label>";
         echo "<select name= 'id_autor'>";
         foreach($nombres as $clave => $valor){
         

@@ -1,1 +1,49 @@
+<style>
+    body{
+        background-image:url('/img/fondoAdmin.jpeg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        text-align:center;
+    }
+
+    h1{
+        color:#E3DAC9 ;
+    }
+
+    form{
+        margin:0 auto;
+        height:230px;
+        width:700px;
+        border:2px solid white;
+        display:grid;
+        grid-template-columns:  0fr 1fr 1fr;
+        grid-template-rows:auto;
+        justify-items:center;
+        padding:10px;
+    }
+    input{
+        width:300px;
+        margin:5px;
+    }
+
+    input[type="submit"]{
+        width:120px;
+        position:absolute;
+        top:330px;
+        left:45%;
+    }
+    label{
+        text-transform:uppercase;
+        font-weight:bold;
+        margin:25px;
+        color:#E3DAC9;
+    }
+    textarea{
+        width:300px;
+    }
+</style>
+<body>
+<h1>Añadir Autor</h1>
 <?=$data['form']?>
+<body>
+

@@ -9,7 +9,7 @@ class FieldSelectDiscos extends BaseField
         $objeto = new ModelDisco();
         $nombres = $objeto -> getAll();
          
-        echo "$this->nombre :";
+        echo "<label>$this->nombre :</label>";
         echo "<select name= 'id_disco'>";
         foreach($nombres as $clave => $valor){
         

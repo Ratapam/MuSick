@@ -5,6 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
     <?=$data['css']?>
+    <style>
+
+        caption {
+            color: whitesmoke;
+        }
+
+        tr:first-of-type{
+        border-bottom:6px groove black;
+        padding:5px;
+        text-transform:uppercase;
+        background-color:#004275;
+        color:whitesmoke;
+        }
+
+        tr {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr 1fr 2fr .2fr;
+        }
+
+        td {
+        padding:  .5em .5em 0;
+        }
+
+        td:first-of-type {
+        grid-column: 1 / 2 ;
+        }
+
+        td:nth-of-type(2) {
+        grid-column: 2 / 3 ;          
+        }
+
+        td:nth-of-type(3) {
+        grid-column: 3 / 4 ;          
+        }
+
+        td:nth-of-type(4) {
+        grid-column: 4 / 5 ;
+        }
+
+        td:last-of-type {
+        grid-column: 5 / 6 ;
+        }
+
+        i{
+            color:black;
+        }
+
+    
+    </style>
  
     <script src="main.js"></script>
 </head>
@@ -15,6 +64,13 @@
                 <caption>
                     LISTA DE REPRODUCCION
                 </caption>
+                    <tr>
+                        <th>CANCION</th>
+                        <th>AUTOR</th>
+                        <th>ESTILO</th>
+                        <th>DISCO</th>
+                        <th>BORRAR</th>
+                    </tr>
                     <?php 
                         foreach($data['lista'] as $clave => $valor){ 
                                 ?>
@@ -27,7 +83,7 @@
                                     </td>
                                 <?php } ?>
                                     <td>
-                                    <a href="/usuario/borrarCancionLista/<?=$valor['nombre_cancion']?>" > x </a>
+                                    <a href="/usuario/borrarCancionLista/<?=$valor['nombre_cancion']?>" > <i class="fas fa-trash-alt"></i></a>
                                     </td>
                                     <td>
                                         

@@ -6,6 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Principal</title>
   <link href="/css/principal.css" rel="stylesheet">
+  <style>
+    .control{
+      margin: 10px 10px;
+    }
+    .biblio{
+      position:relative;
+      bottom:20px;
+      left:0%;
+      transition: all 300ms ease-in-out;
+    }
+
+    .biblio:hover{
+      cursor:pointer;
+     transform: scale(1.5);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -35,13 +51,13 @@
   </main>
   <footer>    
     <div>
-      <button type="button" id="biblioteca">
+      <button type="button" id="biblioteca" class="biblio">
         <a href=" ">
           <img src="/img/imgReproductor/library.png">
         </a>
       </button>
   
-      <audio controls onended="cambiarCancion()" id="audioControl">
+      <audio controls onended="cambiarCancion()" id="audioControl" class="control">
         <source src="" type="audio/mp3" id="audio">
       </audio> 
     </div>

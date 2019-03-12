@@ -1,12 +1,24 @@
-
-
-  <?=$data['css']?>
-
-
+ <?=$data['css']?>
+ 
   <style>
-      caption{color:lime;}
-@import url('/css/artista.css');
-    </style>
+      caption{color:whitesmoke;}
+
+      a{
+          padding-left:20px;
+          font-size:2.8em;
+          text-decoration:none;
+          color:grey;
+      }
+     
+      tr:first-of-type{
+          border-bottom:6px groove black;
+          padding:5px;
+          text-transform:uppercase;
+          background-color:#004275;
+          color:whitesmoke;
+      }
+
+  </style>
 
 <body>
   <main class="container">
@@ -27,6 +39,11 @@
                 <caption>
                     <?= strtoupper($valorDisco['nombre_disco']); ?>
                 </caption>
+               
+                    <tr>
+                        <th>Nombre</th><th>Añadir Cancion</th>
+                    </tr>
+                
                     <?php 
                         foreach($data['canciones'] as $clave => $valor){ 
                             if($valorDisco['id_disco'] == $valor['id_disco']){ ?>
@@ -35,7 +52,7 @@
                                         <?= strtoupper( $valor['nombre_cancion']); ?>
                                     </td>
                                     <td>                                           
-                                       <a href="/usuario/addCancion/<?=$valor['nombre_cancion']?>" > + </a>                 
+                                       <a href="/usuario/addCancion/<?=$valor['nombre_cancion']?>" > <i class="fas fa-folder-plus"></i></a>                 
                                     </td>
                                 </tr>
                       <?php }

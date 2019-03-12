@@ -12,7 +12,7 @@ class FieldLongText extends BaseField
     }
 
     public function pintar() {
-        echo "$this->nombre :";
+        echo "<label>$this->nombre :</label>";
 
         echo "<textarea name='$this->nombre' placeholder=''  minlength='20' maxlength='500' value='$this->dato'></textarea>";
         if($this->error){

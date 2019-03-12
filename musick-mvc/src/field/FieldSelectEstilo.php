@@ -9,7 +9,7 @@ class FieldSelectEstilo extends BaseField
         $objeto = new ModelEstilo();
         $nombres = $objeto -> getAll();
          
-        echo "$this->nombre :";
+        echo "<label>$this->nombre :</label>";
         echo "<select name= 'id_estilo'>";
         foreach($nombres as $clave => $valor){
         

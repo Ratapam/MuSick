@@ -18,7 +18,10 @@
 				<div class="datos-usu">
 					<img src="/img/usu.png">
 					
-					<?php foreach ($data as $clave => $valor) { ?> <h3><?= $clave.":</h3><p>".$valor; ?></p> <?php }?>
+					<?php foreach ($data as $clave => $valor) { 
+						if($clave != "contrasena"){
+						?> <h3><?= $clave.":</h3><p>".$valor; ?></p> <?php }
+						}?>
 
 				</div>
 			</div>
@@ -30,10 +33,6 @@
 					<a>
 			</div>
 		</aside>
-		<!-- <footer class="row">
-			<div class="col-12">
-     			 <p>Copyright &copy; Musick 2019</p>
-		</footer> -->
 	</div>
 </body>
 </html>
