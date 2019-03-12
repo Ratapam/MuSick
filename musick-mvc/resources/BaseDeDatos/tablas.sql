@@ -154,7 +154,7 @@ INSERT INTO estilo (nombre_estilo) VALUES('pop');
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('caminito de totana',CURRENT_DATE,1,1,1);
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('hermanito mio',CURRENT_DATE,1,1,1);
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('que no se quita con na',CURRENT_DATE,1,1,1);
-INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('dame un poquito de agua',CURRENT_DATE,1,1,1);
+INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('el caminante',CURRENT_DATE,1,1,1);
 
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('chacho',CURRENT_DATE,4,2,3);
 INSERT INTO cancion (nombre_cancion,fecha_alta,id_disco,id_autor,id_estilo) VALUES('la verdad mas verdadera',CURRENT_DATE,4,2,3);

@@ -1,0 +1,4 @@
+$this->connection->exec("set character set utf8");
+
+
+sudo apt-get install ubuntu-restricted-extras
