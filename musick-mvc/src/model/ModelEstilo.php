@@ -6,8 +6,6 @@ class ModelEstilo extends BaseModel{
 
     public function cuatroEstilos(){
 		$db = App::getDB();
-        // $id_usuario = $_SESSION['id_usuario'];
-        $id_usuario = 1;
 		$resultado = $db -> ejecutar("SELECT * FROM estilo LIMIT 4");
 		return $resultado;
     }

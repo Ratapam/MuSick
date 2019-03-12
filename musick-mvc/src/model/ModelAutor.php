@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class ModelAutor extends BaseModel{
     protected static $lista_info = ['id_autor','nombre_autor','informacion'];
 

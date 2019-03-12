@@ -114,8 +114,21 @@ public function salir(){
     App::getRouter()->redirect('/usuario/login/');
 }
 
+public function addCancion($nombre_cancion){
+    $this -> data = ModelCancion::datosCancion($nombre_cancion);
+    ModelListaReproduccion::addCancionLista($this->data[0]['id_cancion']);
+    header('location:/autor/presentacion/'.$this->data[0]['id_autor']);
+    die();
+}
 
-     
+public function borrarCancionLista($nombre){
+    $this -> data = ModelCancion::datosCancion($nombre);
+    ModelListaReproduccion::borrarCancion($this->data[0]['id_cancion']);
+    header('location:/usuario/biblioteca/');
+    die();
+
+}
+
 
 }
 

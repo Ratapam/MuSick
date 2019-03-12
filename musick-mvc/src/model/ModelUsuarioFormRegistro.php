@@ -1,4 +1,5 @@
 <?php
+session_start();
 class ModelUsuarioFormRegistro extends BaseForm
 {
 
@@ -14,10 +15,6 @@ class ModelUsuarioFormRegistro extends BaseForm
 
     public static function crearRegistro($nombre,$pass,$correo){
         $db = App::getDB();
-       
-        //$usu = new ModelUsuario('',$nombre,$pass,$token);
-        //$resultado =$usu -> save();
-        
         
         $sql_insert= "INSERT INTO usuario (nick,contrasena,correo) VALUES (?, ?, ?)";
         $resultado = $db -> ejecutar($sql_insert,$nombre,$pass,$correo);

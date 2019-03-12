@@ -17,5 +17,23 @@ class ModelListaReproduccion extends BaseModel
     }
 
 
+    public static function addCancionLista($id_cancion){
+        session_start();
+        $db = App::getDB();
+        $id_usuario = $_SESSION['usuario'];
+        $sql_insert= "INSERT INTO lista_reproduccion (id_usuario,id_cancion) VALUES (?, ?)";
+        $resultado = $db -> ejecutar($sql_insert,$id_usuario,$id_cancion);
+    } 
+
+    public static function borrarCancion($id_cancion){
+        $db = App::getDB();
+        $sentenciaSQL = "DELETE FROM lista_reproduccion where id_cancion = ? ";
+        
+                
+        $resultado = $db -> ejecutar($sentenciaSQL,$id_cancion);
+
+    } 
+
+
 }
 ?>

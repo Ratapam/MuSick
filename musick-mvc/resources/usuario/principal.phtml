@@ -69,20 +69,13 @@
             echo '"'.$rutaCancion.'"';
             echo ",";
             
-          }     
-           
-          
-          ?>
-           
-        
+          }                         
+          ?>             
           ];
-         // palabrasJuego.push(palabrasJuego.shift())
-         let contador= 0;
+          let contador= 0;
           let control = document.getElementById('audioControl');
           control.src = lista[contador];
-          control.load();
-
-          
+          control.load();         
           function cambiarCancion(){
             contador++;
             control.src = lista[contador];
@@ -91,13 +84,8 @@
             if(contador == lista.length){
               contador = 0;
             }
-          
-          
+                  
           }
-          
-       
-
-          alert(lista[0]);
         </script>
  <script src="/js/principal.js"></script>
 </html>

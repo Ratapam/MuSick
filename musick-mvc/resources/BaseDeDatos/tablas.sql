@@ -264,6 +264,13 @@ INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,30,
 INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(3,33,sysdate());
 
 
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,38,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,44,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,53,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,30,sysdate());
+INSERT INTO escuchado_recientemente (id_usuario, id_cancion, fecha) VALUES(4,33,sysdate());
+
+
 /*Insert Lista de reproduccion*/
 
 /*

@@ -1,13 +1,13 @@
-<?php 
-echo "<pre>";
-//print_r($data);
-echo"</pre>";
-?>
-<head>
-  <!--<link href="/css/artista.css" rel="stylesheet">-->
+
+
   <?=$data['css']?>
-  
-</head>
+
+
+  <style>
+      caption{color:lime;}
+@import url('/css/artista.css');
+    </style>
+
 <body>
   <main class="container">
     <div id="nombreArtista">
@@ -34,10 +34,8 @@ echo"</pre>";
                                     <td>
                                         <?= strtoupper( $valor['nombre_cancion']); ?>
                                     </td>
-                                    <td>
-                                        <button type="button">
-                                            <img src="/img/img_artista/mas.png"id="img">
-                                        </button>
+                                    <td>                                           
+                                       <a href="/usuario/addCancion/<?=$valor['nombre_cancion']?>" > + </a>                 
                                     </td>
                                 </tr>
                       <?php }

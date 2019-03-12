@@ -3,6 +3,7 @@ body {
   /* background-color: #20244b; */
   background-size: auto;
   margin: 0 10%;
+  background-color: blue;
  
 }
 
@@ -33,6 +34,18 @@ body {
   width: 100%;  
   border: 2px solid whitesmoke;
   border-radius: 1em;
+}
+
+a{
+  padding:.5em;
+  font-style:bold;
+  font-size:2em;
+  text-decoration:none;
+  color:darkblue;
+}
+
+caption{
+  color:whitesmoke;
 }
 
 @media (max-width: 768px) {
@@ -75,6 +88,7 @@ caption {
   border-radius: .3em .3em 0 0;
   padding: .5em;
   opacity: 0.8;
+  color:whitesmoke !important;
 }
 
 tr > td > button > img {

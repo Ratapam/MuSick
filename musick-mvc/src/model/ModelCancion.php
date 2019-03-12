@@ -20,6 +20,20 @@ class ModelCancion extends BaseModel
         return $resultado;
     }
 
+    public static function datosCancion($nombre) {
+        $nombre = str_replace("%20"," ",$nombre);
+        
+        $db = App::getDB();
+        $sentenciaSQL = "SELECT id_cancion,id_autor FROM cancion WHERE nombre_cancion = ?";
+        $params = $nombre;
+        
+        
+        $resultado = $db -> ejecutar($sentenciaSQL,$params);
+        
+       
+        return $resultado;
+    }
+
 }
 
 ?>
